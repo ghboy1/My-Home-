@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Rauf Husein</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-img">RH</div>
+                RAUF HUSEIN
+            </a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">01. Home</a></li>
+                    <li><a href="index.html#about">02. About</a></li>
+                    <li><a href="index.html#portfolio">03. Portfolio</a></li>
+                    <li><a href="categories.html">04. Categories</a></li>
+                    <li><a href="contact.html" class="active">05. Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="contact-hero-bg"></div>
+        <div class="contact-hero-content">
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for any inquiries or collaboration opportunities</p>
+        </div>
+    </section>
+
+    <main class="contact-main">
+        <section class="company-info">
+            <div class="container">
+                <div class="company-description">
+                    <h2>PrimeHR</h2>
+                    <p class="tagline">Ghana's Leading Human Resource Solutions Provider</p>
+                    <div class="description-text">
+                        <p>PrimeHR is Ghana's leading human resource solutions provider, dedicated to empowering businesses and individuals through expert HR services. We specialize in recruitment, training and upskilling, workforce management, and time scheduling solutions.</p>
+                        <p>Our mission is to support Ghana's vision of a 24-hour economy by optimizing workforce productivity and creating sustainable employment opportunities. With a focus on innovation and excellence, we connect top talent with the right opportunities while helping businesses thrive in today's competitive environment.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Our Offices</h3>
+                        <ul>
+                            <li>Accra</li>
+                            <li>Kumasi</li>
+                            <li>Tamale</li>
+                            <li>Techiman</li>
+                            <li>Takoradi</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <a href="mailto:raufhusein.site">husein@primehr.org</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <a href="tel:+233248837001">+233 24 883 7001</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Website</h3>
+                        <a href="https://www.raufhusein.site.com" target="_blank" rel="noopener">www.primehr.org</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <h2>Send us a Message</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Choose a subject</option>
+                            <option value="recruitment">Recruitment Services</option>
+                            <option value="training">Training Programs</option>
+                            <option value="real-estate">Houses & Apartments for Rent in Ghana</option>
+                            <option value="consulting">HR Consulting</option>
+                            <option value="partnership">Business Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="modern-footer">
+        <div class="footer-navbar">
+            <a href="index.html" class="footer-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="index.html#about" class="footer-nav-item">
+                <i class="fas fa-user"></i>
+                <span>Rauf's Story</span>
+            </a>
+            <a href="index.html#portfolio" class="footer-nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Projects</span>
+            </a>
+            <a href="categories.html" class="footer-nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="contact.html" class="footer-nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
