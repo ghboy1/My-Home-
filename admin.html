@@ -94,6 +94,34 @@
             transform: translateY(-2px);
             background: var(--accent-highlight-alt);
         }
+
+        .info-banner {
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid var(--accent-highlight);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: start;
+        }
+
+        .info-banner i {
+            color: var(--accent-highlight);
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+
+        .info-banner-content h3 {
+            color: var(--accent-highlight);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .info-banner-content p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
         
         .admin-tabs {
             display: flex;
@@ -156,8 +184,6 @@
             color: var(--text-header);
             font-weight: 600;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
         
         .form-group input,
@@ -186,36 +212,78 @@
             resize: vertical;
             line-height: 1.6;
         }
+
+        .form-group small {
+            color: var(--text-main);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: block;
+        }
         
-        .platform-selector {
-            display: flex;
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
             gap: 15px;
-            flex-wrap: wrap;
         }
         
         .platform-option {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
-            padding: 12px 20px;
+            padding: 20px 15px;
             background: var(--primary-dark);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.1);
             border-radius: var(--radius);
             cursor: pointer;
             transition: var(--transition);
-            color: var(--text-main);
+            text-align: center;
         }
         
         .platform-option:hover {
             border-color: var(--accent-highlight);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
         
         .platform-option.selected {
             border-color: var(--accent-highlight);
             background: rgba(100, 255, 218, 0.1);
-            color: var(--accent-highlight);
         }
+
+        .platform-option i {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .platform-option span {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Platform-specific colors */
+        .platform-option[data-platform="facebook"]:hover,
+        .platform-option[data-platform="facebook"].selected { border-color: #1877F2; }
+        .platform-option[data-platform="facebook"] i { color: #1877F2; }
+
+        .platform-option[data-platform="instagram"]:hover,
+        .platform-option[data-platform="instagram"].selected { border-color: #E4405F; }
+        .platform-option[data-platform="instagram"] i { color: #E4405F; }
+
+        .platform-option[data-platform="twitter"]:hover,
+        .platform-option[data-platform="twitter"].selected { border-color: #1DA1F2; }
+        .platform-option[data-platform="twitter"] i { color: #1DA1F2; }
+
+        .platform-option[data-platform="linkedin"]:hover,
+        .platform-option[data-platform="linkedin"].selected { border-color: #0A66C2; }
+        .platform-option[data-platform="linkedin"] i { color: #0A66C2; }
+
+        .platform-option[data-platform="tiktok"]:hover,
+        .platform-option[data-platform="tiktok"].selected { border-color: #69C9D0; }
+        .platform-option[data-platform="tiktok"] i { color: #69C9D0; }
+
+        .platform-option[data-platform="youtube"]:hover,
+        .platform-option[data-platform="youtube"].selected { border-color: #FF0000; }
+        .platform-option[data-platform="youtube"] i { color: #FF0000; }
         
         .schedule-options {
             display: grid;
@@ -234,6 +302,10 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
         }
         
         .btn-primary {
@@ -267,6 +339,83 @@
         .btn-danger:hover {
             background: #ff6b6b;
             color: white;
+        }
+
+        .post-preview {
+            background: var(--primary-dark);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .post-preview h4 {
+            color: var(--accent-highlight);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .preview-content {
+            background: var(--primary-light);
+            padding: 20px;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent-highlight);
+            margin-bottom: 20px;
+        }
+
+        .preview-content #previewText {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .preview-content #previewPlatforms {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .preview-content #previewPlatforms span {
+            background: var(--primary-dark);
+            padding: 5px 12px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .copy-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .copy-btn {
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .copy-btn:hover {
+            border-color: var(--accent-highlight);
+            color: var(--accent-highlight);
+            transform: translateY(-2px);
+        }
+
+        .copy-btn.copied {
+            background: rgba(100, 255, 218, 0.2);
+            border-color: var(--accent-highlight);
+            color: var(--accent-highlight);
         }
         
         .scheduled-posts {
@@ -403,6 +552,19 @@
             .btn {
                 width: 100%;
             }
+
+            .platform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .copy-buttons {
+                flex-direction: column;
+            }
+
+            .copy-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -439,6 +601,7 @@
     </section>
 
     <main class="admin-container">
+        <!-- Login Section -->
         <div id="authSection" class="auth-section">
             <i class="fas fa-user-shield"></i>
             <h2>Admin Access Required</h2>
@@ -453,6 +616,7 @@
             </form>
         </div>
 
+        <!-- Content Manager (Hidden until logged in) -->
         <div id="contentManager" style="display: none;">
             <div class="admin-tabs">
                 <button class="admin-tab active" data-tab="composer"><i class="fas fa-pen"></i> Create Post</button>
@@ -461,45 +625,68 @@
                 <button class="admin-tab" data-tab="settings"><i class="fas fa-cog"></i> Settings</button>
             </div>
 
+            <!-- Create Post Tab -->
             <div class="tab-content active" id="composer">
+                <div class="info-banner">
+                    <i class="fas fa-info-circle"></i>
+                    <div class="info-banner-content">
+                        <h3>How This Works</h3>
+                        <p>Create your post below, then use the "Copy to Clipboard" buttons to paste your content directly to each social media platform. Posts are automatically saved to your database for tracking and analytics.</p>
+                    </div>
+                </div>
+
                 <div id="composerMessages"></div>
+                
                 <div class="post-form">
                     <div class="form-group">
-                        <label>Select Platforms *</label>
-                        <div class="platform-selector" id="platformSelector">
+                        <label>📱 Select Target Platforms *</label>
+                        <div class="platform-grid" id="platformSelector">
+                            <div class="platform-option" data-platform="facebook">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </div>
+                            <div class="platform-option" data-platform="instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </div>
                             <div class="platform-option" data-platform="twitter">
                                 <i class="fab fa-twitter"></i>
-                                <span>Twitter</span>
+                                <span>Twitter/X</span>
                             </div>
                             <div class="platform-option" data-platform="linkedin">
                                 <i class="fab fa-linkedin"></i>
                                 <span>LinkedIn</span>
                             </div>
-                            <div class="platform-option" data-platform="facebook">
-                                <i class="fab fa-facebook"></i>
-                                <span>Facebook</span>
+                            <div class="platform-option" data-platform="tiktok">
+                                <i class="fab fa-tiktok"></i>
+                                <span>TikTok</span>
+                            </div>
+                            <div class="platform-option" data-platform="youtube">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="postTitle">Post Title *</label>
-                        <input type="text" id="postTitle" placeholder="Enter an internal reference title...">
+                        <label for="postTitle">📝 Post Title (Internal Reference) *</label>
+                        <input type="text" id="postTitle" placeholder="e.g., Product Launch Announcement">
                     </div>
 
                     <div class="form-group">
-                        <label for="postContent">Post Content *</label>
-                        <textarea id="postContent" placeholder="What would you like to share with your audience?"></textarea>
+                        <label for="postContent">✍️ Post Content *</label>
+                        <textarea id="postContent" placeholder="Write your engaging post content here..."></textarea>
+                        <small>💡 Tip: Keep it under 280 characters for Twitter, use emojis for engagement!</small>
                     </div>
 
                     <div class="form-group">
-                        <label for="postMedia">Media URL (optional)</label>
+                        <label for="postMedia">🖼️ Media URL (Optional)</label>
                         <input type="url" id="postMedia" placeholder="https://example.com/image.jpg">
                     </div>
 
                     <div class="form-group">
-                        <label for="postTags">Tags (comma-separated)</label>
-                        <input type="text" id="postTags" placeholder="marketing, tech, business">
+                        <label for="postTags">🏷️ Tags (comma-separated)</label>
+                        <input type="text" id="postTags" placeholder="business, entrepreneurship, ghana">
                     </div>
 
                     <div class="schedule-options">
@@ -518,13 +705,38 @@
                         </div>
                     </div>
 
-                    <div style="display: flex; gap: 15px; margin-top: 20px;">
-                        <button class="btn btn-primary" id="savePostBtn"><i class="fas fa-save"></i> Save Post</button>
-                        <button class="btn btn-secondary" id="clearFormBtn">Clear Form</button>
+                    <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                        <button class="btn btn-primary" id="previewBtn"><i class="fas fa-eye"></i> Preview & Copy</button>
+                        <button class="btn btn-secondary" id="clearFormBtn"><i class="fas fa-redo"></i> Clear Form</button>
+                    </div>
+                </div>
+
+                <!-- Preview Section -->
+                <div id="postPreview" style="display: none;">
+                    <div class="post-preview">
+                        <h4>📋 Post Preview</h4>
+                        <div class="preview-content">
+                            <div id="previewText"></div>
+                            <div id="previewPlatforms"></div>
+                        </div>
+
+                        <h4>🔗 Quick Copy to Platforms</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-main);">
+                            Click a button to copy, then paste directly on that platform.
+                        </p>
+                        
+                        <div class="copy-buttons" id="copyButtons"></div>
+
+                        <div style="padding-top: 20px; border-top: 1px solid var(--border-color);">
+                            <button class="btn btn-primary" id="savePostBtn">
+                                <i class="fas fa-save"></i> Save to Database
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Scheduled Tab -->
             <div class="tab-content" id="scheduled">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <h2>Content Queue</h2>
@@ -538,6 +750,7 @@
                 </div>
             </div>
 
+            <!-- Analytics Tab -->
             <div class="tab-content" id="analytics">
                 <h2>Performance Overview</h2>
                 <div class="analytics-grid" id="analyticsGrid">
@@ -560,6 +773,7 @@
                 </div>
             </div>
 
+            <!-- Settings Tab -->
             <div class="tab-content" id="settings">
                 <h2>Settings</h2>
                 <div class="post-form">
@@ -601,17 +815,25 @@
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
     <script>
-        // Content Manager - API Integration Logic
+        // Content Manager - Complete Integration
         const API_BASE = 'https://my-home-mn7b.onrender.com/api';
         let authToken = localStorage.getItem('adminToken');
         let selectedPlatforms = new Set();
-        const VALID_PLATFORMS = ['twitter', 'linkedin', 'facebook'];
+        const VALID_PLATFORMS = ['facebook', 'instagram', 'twitter', 'linkedin', 'tiktok', 'youtube'];
+        
+        const platformLinks = {
+            facebook: 'https://www.facebook.com/',
+            instagram: 'https://www.instagram.com/',
+            twitter: 'https://twitter.com/compose/tweet',
+            linkedin: 'https://www.linkedin.com/feed/',
+            tiktok: 'https://www.tiktok.com/upload',
+            youtube: 'https://studio.youtube.com/'
+        };
 
         // Check auth on page load
         document.addEventListener('DOMContentLoaded', () => {
-            // Ensure scripts.js loaded before running this
             if (authToken) {
                 verifyToken();
             } else {
@@ -665,23 +887,17 @@
                 });
             });
 
-            // Save post
-            const savePostBtn = document.getElementById('savePostBtn');
-            if (savePostBtn) {
-                savePostBtn.addEventListener('click', savePost);
-            }
+            // Preview button
+            document.getElementById('previewBtn').addEventListener('click', showPreview);
+
+            // Save post button
+            document.getElementById('savePostBtn').addEventListener('click', savePost);
 
             // Clear form
-            const clearFormBtn = document.getElementById('clearFormBtn');
-            if (clearFormBtn) {
-                clearFormBtn.addEventListener('click', clearForm);
-            }
+            document.getElementById('clearFormBtn').addEventListener('click', clearForm);
 
             // Logout
-            const logoutBtn = document.getElementById('logoutBtn');
-            if (logoutBtn) {
-                logoutBtn.addEventListener('click', logout);
-            }
+            document.getElementById('logoutBtn').addEventListener('click', logout);
         }
 
         // Login handler
@@ -696,7 +912,6 @@
                 return;
             }
 
-            // Loading state
             const originalBtnContent = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
             btn.disabled = true;
@@ -704,9 +919,7 @@
             try {
                 const response = await fetch(`${API_BASE}/login`, {
                     method: 'POST',
-                    headers: { 
-                        'Content-Type': 'application/json' 
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ password })
                 });
 
@@ -720,7 +933,7 @@
                         showContentManager();
                         loadPosts();
                         loadStats();
-                        passwordField.value = ''; // clear password
+                        passwordField.value = '';
                     }, 800);
                 } else {
                     showMessage('error', data.message || 'Invalid password. Please try again.', 'loginMessages');
@@ -746,13 +959,11 @@
                     loadPosts();
                     loadStats();
                 } else {
-                    // Token invalid or expired
                     localStorage.removeItem('adminToken');
                     authToken = null;
                     showAuthSection();
                 }
             } catch (error) {
-                // If API is down or network error, assume logged out for security
                 localStorage.removeItem('adminToken');
                 authToken = null;
                 showAuthSection();
@@ -778,7 +989,74 @@
             showMessage('success', 'Logged out successfully', 'loginMessages');
         }
 
-        // Save post
+        // Show preview
+        function showPreview() {
+            const title = document.getElementById('postTitle').value.trim();
+            const content = document.getElementById('postContent').value.trim();
+
+            if (!content) {
+                showMessage('error', 'Please write some content first!', 'composerMessages');
+                return;
+            }
+
+            if (selectedPlatforms.size === 0) {
+                showMessage('error', 'Please select at least one platform!', 'composerMessages');
+                return;
+            }
+
+            // Show preview section
+            document.getElementById('postPreview').style.display = 'block';
+            document.getElementById('previewText').textContent = content;
+
+            // Show selected platforms
+            const platformsHtml = Array.from(selectedPlatforms).map(p => 
+                `<span><i class="fab fa-${p}"></i> ${p.charAt(0).toUpperCase() + p.slice(1)}</span>`
+            ).join('');
+            document.getElementById('previewPlatforms').innerHTML = platformsHtml;
+
+            // Generate copy buttons
+            const buttonsHtml = Array.from(selectedPlatforms).map(p => 
+                `<button class="copy-btn" data-platform="${p}">
+                    <i class="fab fa-${p}"></i> Copy for ${p.charAt(0).toUpperCase() + p.slice(1)}
+                </button>`
+            ).join('');
+            document.getElementById('copyButtons').innerHTML = buttonsHtml;
+
+            // Add copy functionality
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const platform = btn.dataset.platform;
+                    const content = document.getElementById('postContent').value;
+                    const tags = document.getElementById('postTags').value.split(',').map(t => t.trim()).filter(Boolean);
+                    
+                    let copyText = content;
+                    if (tags.length > 0) {
+                        copyText += '\n\n' + tags.map(t => `#${t}`).join(' ');
+                    }
+
+                    try {
+                        await navigator.clipboard.writeText(copyText);
+                        btn.classList.add('copied');
+                        btn.innerHTML = `<i class="fas fa-check"></i> Copied!`;
+                        
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            btn.innerHTML = `<i class="fab fa-${platform}"></i> Copy for ${platform.charAt(0).toUpperCase() + platform.slice(1)}`;
+                        }, 2000);
+
+                        if (confirm(`Content copied! Open ${platform}?`)) {
+                            window.open(platformLinks[platform], '_blank');
+                        }
+                    } catch (err) {
+                        showMessage('error', 'Failed to copy. Please copy manually.', 'composerMessages');
+                    }
+                });
+            });
+
+            document.getElementById('postPreview').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Save post to database
         async function savePost() {
             const title = document.getElementById('postTitle').value.trim();
             const content = document.getElementById('postContent').value.trim();
@@ -787,21 +1065,12 @@
             const scheduleType = document.getElementById('scheduleType').value;
             const dateTime = document.getElementById('postDateTime').value;
 
-            // Validation
             if (!title || !content) {
                 return showMessage('error', 'Title and content are required', 'composerMessages');
             }
             if (selectedPlatforms.size === 0) {
                 return showMessage('error', 'Please select at least one platform', 'composerMessages');
             }
-            
-            // Validate Platforms against allowed list
-            const platformsArray = Array.from(selectedPlatforms);
-            const invalidPlatforms = platformsArray.filter(p => !VALID_PLATFORMS.includes(p));
-            if (invalidPlatforms.length > 0) {
-                return showMessage('error', 'Invalid platform selection detected', 'composerMessages');
-            }
-
             if (scheduleType === 'schedule' && !dateTime) {
                 return showMessage('error', 'Please select a date and time for scheduling', 'composerMessages');
             }
@@ -814,7 +1083,7 @@
                 title,
                 content,
                 media: media || null,
-                platforms: platformsArray,
+                platforms: Array.from(selectedPlatforms),
                 tags: tags ? tags.split(',').map(t => t.trim()) : [],
                 scheduledFor: scheduleType === 'schedule' ? new Date(dateTime).toISOString() : null
             };
@@ -832,17 +1101,19 @@
                 const result = await response.json();
 
                 if (response.ok) {
-                    showMessage('success', result.message || 'Post saved successfully!', 'composerMessages');
-                    clearForm();
+                    showMessage('success', result.message || 'Post saved successfully! ✅', 'composerMessages');
                     
                     if (scheduleType === 'now' && result.post && result.post._id) {
-                        await publishPost(result.post._id, false); // false to suppress confirm dialog
+                        await publishPost(result.post._id, false);
                     }
                     
-                    // Switch to scheduled tab to see result if not posting now
-                    if (scheduleType !== 'now') {
-                        loadPosts();
-                    }
+                    setTimeout(() => {
+                        if (confirm('Post saved! Clear form to create another?')) {
+                            clearForm();
+                        }
+                    }, 1500);
+                    
+                    loadPosts();
                     loadStats();
                 } else {
                     showMessage('error', result.message || 'Failed to save post', 'composerMessages');
@@ -850,7 +1121,7 @@
             } catch (error) {
                 showMessage('error', 'Network error: ' + error.message, 'composerMessages');
             } finally {
-                btn.innerHTML = '<i class="fas fa-save"></i> Save Post';
+                btn.innerHTML = '<i class="fas fa-save"></i> Save to Database';
                 btn.disabled = false;
             }
         }
@@ -864,8 +1135,10 @@
             document.getElementById('scheduleType').value = 'draft';
             document.getElementById('postDateTime').value = '';
             document.getElementById('scheduleDateTimeGroup').style.display = 'none';
+            document.getElementById('postPreview').style.display = 'none';
             selectedPlatforms.clear();
             document.querySelectorAll('.platform-option').forEach(o => o.classList.remove('selected'));
+            showMessage('success', 'Form cleared!', 'composerMessages');
         }
 
         // Load posts
@@ -993,7 +1266,6 @@
             const div = document.getElementById(containerId);
             div.innerHTML = `<div class="message-box ${type}-message"><i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}"></i> ${message}</div>`;
             
-            // Auto clear after 5 seconds
             setTimeout(() => {
                 if(div.innerHTML.includes(message)) {
                     div.innerHTML = '';
