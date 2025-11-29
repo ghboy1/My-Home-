@@ -35,7 +35,33 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+// Middleware
+app.use(cors({
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'https://raufhusein.site',
+      'https://www.raufhusein.site',
+      'https://my-home-git-main-ghboy1s-projects.vercel.app',  // Add your Vercel frontend URL here
+      'http://localhost:5500',  // Optional: for local testing (change port if needed)
+      'http://127.0.0.1:5500'   // Optional: another local variant
+    ];
 
+    // Allow requests with no origin (e.g., curl, Postman)
+    if (!origin) return callback(null, true);
+
+    // Check if origin is allowed
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    // If not allowed, block it
+    return callback(new Error('Not allowed by CORS'));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Allow these methods
+  allowedHeaders: ['Content-Type', 'Authorization'],     // Allow your headers
+  credentials: false  // Set to false since you're using JWT (no cookies needed)
+}));
+app.use(express.json());
 // Post Schema (renamed 'errors' to 'postErrors' to avoid Mongoose warning)
 const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
