@@ -1,14 +1,27 @@
-require('dotenv').config();
+// Critical env vars - crash early if missing
+const requiredEnv = ['MONGODB_URI', 'JWT_SECRET', 'ADMIN_PASSWORD'];
+requiredEnv.forEach(varName => {
+  if (!process.env[varName]) {
+    console.error(`\n❌ MISSING ENV VAR: ${varName}`);
+    console.error(`   Add it in Render Dashboard → Environment Variables\n`);
+    process.exit(1);
+  }
+});
+
+console.log('✅ All required environment variables loaded');
+
 const express = require('express');
 const cors = require('cors');
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
 const app = express();
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI)
+// MongoDB Connection (with retry options)
+mongoose.connect(process.env.MONGODB_URI, {
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000
+})
   .then(() => console.log('✅ MongoDB Connected'))
   .catch(err => console.error('❌ MongoDB Error:', err));
 
@@ -19,7 +32,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Post Schema
+// Post Schema (renamed 'errors' to 'postErrors' to avoid Mongoose warning)
 const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
@@ -39,7 +52,7 @@ const postSchema = new mongoose.Schema({
     postId: String,
     postedAt: Date
   }],
-  errors: [{
+  postErrors: [{
     platform: String,
     error: String,
     timestamp: Date
@@ -349,7 +362,7 @@ async function publishPost(post) {
   console.log(`📤 Publishing: ${post.title}`);
   
   const results = [];
-  const errors = [];
+  const postErrors = [];
   
   for (const platform of post.platforms) {
     try {
@@ -367,7 +380,7 @@ async function publishPost(post) {
         postedAt: new Date()
       });
     } catch (error) {
-      errors.push({
+      postErrors.push({
         platform,
         error: error.message,
         timestamp: new Date()
@@ -376,8 +389,8 @@ async function publishPost(post) {
   }
   
   post.results = results;
-  post.errors = errors;
-  post.status = errors.length > 0 ? 'failed' : 'posted';
+  post.postErrors = postErrors;
+  post.status = postErrors.length > 0 ? 'failed' : 'posted';
   post.updatedAt = new Date();
   await post.save();
   
