@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Manager | Rauf Husein</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Admin Specific Styles */
+        .admin-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .auth-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--primary-light);
+            border-radius: var(--radius-lg);
+            max-width: 500px;
+            margin: 0 auto;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .auth-section i {
+            font-size: 4rem;
+            color: var(--accent-highlight);
+            margin-bottom: 20px;
+        }
+        
+        .auth-section h2 {
+            margin-bottom: 15px;
+            color: var(--text-header);
+        }
+        
+        .auth-section p {
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        
+        .login-form input {
+            padding: 15px;
+            background: var(--primary-dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            color: var(--text-header);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: var(--accent-highlight);
+        }
+        
+        .login-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 30px;
+            background: var(--accent-highlight);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            width: 100%;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            background: var(--accent-highlight-alt);
+        }
+        
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+        }
+        
+        .admin-tab {
+            padding: 15px 25px;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .admin-tab:hover {
+            color: var(--text-header);
+        }
+        
+        .admin-tab.active {
+            color: var(--accent-highlight);
+            border-bottom-color: var(--accent-highlight);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .post-form {
+            background: var(--primary-light);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-header);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-highlight);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+        
+        .platform-selector {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .platform-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--primary-dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-main);
+        }
+        
+        .platform-option:hover {
+            border-color: var(--accent-highlight);
+            transform: translateY(-2px);
+        }
+        
+        .platform-option.selected {
+            border-color: var(--accent-highlight);
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent-highlight);
+        }
+        
+        .schedule-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: var(--accent-highlight);
+            color: var(--primary-dark);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-highlight-alt);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(100, 255, 218, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent-highlight);
+            color: var(--accent-highlight);
+        }
+        
+        .btn-danger {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid #ff6b6b;
+            color: #ff6b6b;
+        }
+        
+        .btn-danger:hover {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .scheduled-posts {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .scheduled-post {
+            background: var(--primary-light);
+            padding: 25px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--accent-highlight);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-left: 4px solid var(--accent-highlight);
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .status-badge {
+            background: rgba(100, 255, 218, 0.1); 
+            color: var(--accent-highlight); 
+            padding: 4px 12px; 
+            border-radius: 12px; 
+            font-size: 0.8rem; 
+            font-weight: 600;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .post-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .analytics-card {
+            background: var(--primary-light);
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-highlight);
+        }
+        
+        .analytics-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-highlight);
+            margin-bottom: 10px;
+        }
+
+        .analytics-label {
+            color: var(--text-light);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-main);
+        }
+        
+        .loading i {
+            font-size: 2rem;
+            animation: spin 1s linear infinite;
+            color: var(--accent-highlight);
+        }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        
+        .message-box {
+            padding: 15px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .error-message {
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+            border: 1px solid #ff6b6b;
+        }
+        
+        .success-message {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent-highlight);
+            border: 1px solid var(--accent-highlight);
+        }
+        
+        @media (max-width: 768px) {
+            .schedule-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-tabs {
+                gap: 5px;
+            }
+            
+            .admin-tab {
+                padding: 12px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .post-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-img">RH</div>
+                RAUF HUSEIN
+            </a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">01. Home</a></li>
+                    <li><a href="index.html#about">02. About</a></li>
+                    <li><a href="index.html#portfolio">03. Portfolio</a></li>
+                    <li><a href="index.html#ventures">04. Ventures</a></li>
+                    <li><a href="categories.html">05. Categories</a></li>
+                    <li><a href="products.html">06. Marketplace</a></li>
+                    <li><a href="contact.html">07. Contact</a></li>
+                    <li><a href="admin.html" class="active">08. Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="admin-hero">
+        <div class="container">
+            <h1>Content Manager</h1>
+            <p>Create, schedule, and manage your social media posts</p>
+        </div>
+    </section>
+
+    <main class="admin-container">
+        <div id="authSection" class="auth-section">
+            <i class="fas fa-user-shield"></i>
+            <h2>Admin Access Required</h2>
+            <p>Please enter your credentials to access the Content Manager.</p>
+            <div id="loginMessages"></div>
+            <form id="loginForm" class="login-form">
+                <input type="password" id="password" placeholder="Admin Password" required autocomplete="current-password">
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Access Dashboard
+                </button>
+            </form>
+        </div>
+
+        <div id="contentManager" style="display: none;">
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="composer"><i class="fas fa-pen"></i> Create Post</button>
+                <button class="admin-tab" data-tab="scheduled"><i class="fas fa-calendar-alt"></i> Scheduled</button>
+                <button class="admin-tab" data-tab="analytics"><i class="fas fa-chart-bar"></i> Analytics</button>
+                <button class="admin-tab" data-tab="settings"><i class="fas fa-cog"></i> Settings</button>
+            </div>
+
+            <div class="tab-content active" id="composer">
+                <div id="composerMessages"></div>
+                <div class="post-form">
+                    <div class="form-group">
+                        <label>Select Platforms *</label>
+                        <div class="platform-selector" id="platformSelector">
+                            <div class="platform-option" data-platform="twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </div>
+                            <div class="platform-option" data-platform="linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </div>
+                            <div class="platform-option" data-platform="facebook">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postTitle">Post Title *</label>
+                        <input type="text" id="postTitle" placeholder="Enter an internal reference title...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postContent">Post Content *</label>
+                        <textarea id="postContent" placeholder="What would you like to share with your audience?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postMedia">Media URL (optional)</label>
+                        <input type="url" id="postMedia" placeholder="https://example.com/image.jpg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postTags">Tags (comma-separated)</label>
+                        <input type="text" id="postTags" placeholder="marketing, tech, business">
+                    </div>
+
+                    <div class="schedule-options">
+                        <div class="form-group">
+                            <label for="scheduleType">Schedule Type *</label>
+                            <select id="scheduleType">
+                                <option value="draft">Save as Draft</option>
+                                <option value="now">Post Now</option>
+                                <option value="schedule">Schedule for Later</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="scheduleDateTimeGroup" style="display: none;">
+                            <label for="postDateTime">Schedule Date & Time *</label>
+                            <input type="datetime-local" id="postDateTime">
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <button class="btn btn-primary" id="savePostBtn"><i class="fas fa-save"></i> Save Post</button>
+                        <button class="btn btn-secondary" id="clearFormBtn">Clear Form</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="scheduled">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2>Content Queue</h2>
+                    <button class="btn btn-secondary" onclick="loadPosts()" style="padding: 8px 16px;"><i class="fas fa-sync"></i> Refresh</button>
+                </div>
+                <div id="scheduledPostsList" class="scheduled-posts">
+                    <div class="loading">
+                        <i class="fas fa-spinner"></i>
+                        <p>Loading posts...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="analytics">
+                <h2>Performance Overview</h2>
+                <div class="analytics-grid" id="analyticsGrid">
+                    <div class="analytics-card">
+                        <div class="analytics-number" id="statTotal">0</div>
+                        <div class="analytics-label">Total Posts</div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="analytics-number" id="statScheduled">0</div>
+                        <div class="analytics-label">Scheduled</div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="analytics-number" id="statPosted">0</div>
+                        <div class="analytics-label">Published</div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="analytics-number" id="statDraft">0</div>
+                        <div class="analytics-label">Drafts</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="settings">
+                <h2>Settings</h2>
+                <div class="post-form">
+                    <div class="form-group">
+                        <label>Session Information</label>
+                        <div id="userInfo" style="padding: 20px; background: var(--primary-dark); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.05);">
+                            <p style="margin-bottom: 5px;"><strong>Status:</strong> <span style="color: var(--accent-highlight);">Active</span></p>
+                            <p><strong>Role:</strong> Administrator</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-danger" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Secure Logout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="modern-footer">
+        <div class="footer-navbar">
+            <a href="index.html" class="footer-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="index.html#about" class="footer-nav-item">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="index.html#ventures" class="footer-nav-item">
+                <i class="fas fa-rocket"></i>
+                <span>Ventures</span>
+            </a>
+            <a href="products.html" class="footer-nav-item">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Shop</span>
+            </a>
+            <a href="contact.html" class="footer-nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Content Manager - API Integration Logic
+        const API_BASE = 'https://my-home-mn7b.onrender.com/api';
+        let authToken = localStorage.getItem('adminToken');
+        let selectedPlatforms = new Set();
+        const VALID_PLATFORMS = ['twitter', 'linkedin', 'facebook'];
+
+        // Check auth on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ensure scripts.js loaded before running this
+            if (authToken) {
+                verifyToken();
+            } else {
+                showAuthSection();
+            }
+            initEventListeners();
+        });
+
+        // Initialize event listeners
+        function initEventListeners() {
+            // Login form
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', handleLogin);
+            }
+
+            // Platform selection
+            document.querySelectorAll('.platform-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    const platform = option.dataset.platform;
+                    if (selectedPlatforms.has(platform)) {
+                        selectedPlatforms.delete(platform);
+                        option.classList.remove('selected');
+                    } else {
+                        selectedPlatforms.add(platform);
+                        option.classList.add('selected');
+                    }
+                });
+            });
+
+            // Schedule type toggle
+            const scheduleType = document.getElementById('scheduleType');
+            if (scheduleType) {
+                scheduleType.addEventListener('change', function() {
+                    document.getElementById('scheduleDateTimeGroup').style.display = 
+                        this.value === 'schedule' ? 'block' : 'none';
+                });
+            }
+
+            // Tab switching
+            document.querySelectorAll('.admin-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+                    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                    
+                    if (targetTab === 'scheduled') loadPosts();
+                    if (targetTab === 'analytics') loadStats();
+                });
+            });
+
+            // Save post
+            const savePostBtn = document.getElementById('savePostBtn');
+            if (savePostBtn) {
+                savePostBtn.addEventListener('click', savePost);
+            }
+
+            // Clear form
+            const clearFormBtn = document.getElementById('clearFormBtn');
+            if (clearFormBtn) {
+                clearFormBtn.addEventListener('click', clearForm);
+            }
+
+            // Logout
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', logout);
+            }
+        }
+
+        // Login handler
+        async function handleLogin(e) {
+            e.preventDefault();
+            const passwordField = document.getElementById('password');
+            const password = passwordField.value.trim();
+            const btn = document.querySelector('.login-btn');
+            
+            if (!password) {
+                showMessage('error', 'Please enter your password', 'loginMessages');
+                return;
+            }
+
+            // Loading state
+            const originalBtnContent = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(`${API_BASE}/login`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json' 
+                    },
+                    body: JSON.stringify({ password })
+                });
+
+                const data = await response.json();
+
+                if (data.success || response.ok) {
+                    authToken = data.token;
+                    localStorage.setItem('adminToken', authToken);
+                    showMessage('success', 'Login successful! Redirecting...', 'loginMessages');
+                    setTimeout(() => {
+                        showContentManager();
+                        loadPosts();
+                        loadStats();
+                        passwordField.value = ''; // clear password
+                    }, 800);
+                } else {
+                    showMessage('error', data.message || 'Invalid password. Please try again.', 'loginMessages');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showMessage('error', 'Connection failed. Please check your internet or server status.', 'loginMessages');
+            } finally {
+                btn.innerHTML = originalBtnContent;
+                btn.disabled = false;
+            }
+        }
+
+        // Verify token
+        async function verifyToken() {
+            try {
+                const response = await fetch(`${API_BASE}/verify`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+
+                if (response.ok) {
+                    showContentManager();
+                    loadPosts();
+                    loadStats();
+                } else {
+                    // Token invalid or expired
+                    localStorage.removeItem('adminToken');
+                    authToken = null;
+                    showAuthSection();
+                }
+            } catch (error) {
+                // If API is down or network error, assume logged out for security
+                localStorage.removeItem('adminToken');
+                authToken = null;
+                showAuthSection();
+            }
+        }
+
+        // Show/hide sections
+        function showAuthSection() {
+            document.getElementById('authSection').style.display = 'block';
+            document.getElementById('contentManager').style.display = 'none';
+        }
+
+        function showContentManager() {
+            document.getElementById('authSection').style.display = 'none';
+            document.getElementById('contentManager').style.display = 'block';
+        }
+
+        // Logout
+        function logout() {
+            localStorage.removeItem('adminToken');
+            authToken = null;
+            showAuthSection();
+            showMessage('success', 'Logged out successfully', 'loginMessages');
+        }
+
+        // Save post
+        async function savePost() {
+            const title = document.getElementById('postTitle').value.trim();
+            const content = document.getElementById('postContent').value.trim();
+            const media = document.getElementById('postMedia').value.trim();
+            const tags = document.getElementById('postTags').value.trim();
+            const scheduleType = document.getElementById('scheduleType').value;
+            const dateTime = document.getElementById('postDateTime').value;
+
+            // Validation
+            if (!title || !content) {
+                return showMessage('error', 'Title and content are required', 'composerMessages');
+            }
+            if (selectedPlatforms.size === 0) {
+                return showMessage('error', 'Please select at least one platform', 'composerMessages');
+            }
+            
+            // Validate Platforms against allowed list
+            const platformsArray = Array.from(selectedPlatforms);
+            const invalidPlatforms = platformsArray.filter(p => !VALID_PLATFORMS.includes(p));
+            if (invalidPlatforms.length > 0) {
+                return showMessage('error', 'Invalid platform selection detected', 'composerMessages');
+            }
+
+            if (scheduleType === 'schedule' && !dateTime) {
+                return showMessage('error', 'Please select a date and time for scheduling', 'composerMessages');
+            }
+
+            const btn = document.getElementById('savePostBtn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+            btn.disabled = true;
+
+            const postData = {
+                title,
+                content,
+                media: media || null,
+                platforms: platformsArray,
+                tags: tags ? tags.split(',').map(t => t.trim()) : [],
+                scheduledFor: scheduleType === 'schedule' ? new Date(dateTime).toISOString() : null
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/posts`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${authToken}`
+                    },
+                    body: JSON.stringify(postData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showMessage('success', result.message || 'Post saved successfully!', 'composerMessages');
+                    clearForm();
+                    
+                    if (scheduleType === 'now' && result.post && result.post._id) {
+                        await publishPost(result.post._id, false); // false to suppress confirm dialog
+                    }
+                    
+                    // Switch to scheduled tab to see result if not posting now
+                    if (scheduleType !== 'now') {
+                        loadPosts();
+                    }
+                    loadStats();
+                } else {
+                    showMessage('error', result.message || 'Failed to save post', 'composerMessages');
+                }
+            } catch (error) {
+                showMessage('error', 'Network error: ' + error.message, 'composerMessages');
+            } finally {
+                btn.innerHTML = '<i class="fas fa-save"></i> Save Post';
+                btn.disabled = false;
+            }
+        }
+
+        // Clear form
+        function clearForm() {
+            document.getElementById('postTitle').value = '';
+            document.getElementById('postContent').value = '';
+            document.getElementById('postMedia').value = '';
+            document.getElementById('postTags').value = '';
+            document.getElementById('scheduleType').value = 'draft';
+            document.getElementById('postDateTime').value = '';
+            document.getElementById('scheduleDateTimeGroup').style.display = 'none';
+            selectedPlatforms.clear();
+            document.querySelectorAll('.platform-option').forEach(o => o.classList.remove('selected'));
+        }
+
+        // Load posts
+        async function loadPosts() {
+            if (!authToken) return;
+
+            const container = document.getElementById('scheduledPostsList');
+            container.innerHTML = '<div class="loading"><i class="fas fa-spinner"></i><p>Loading posts...</p></div>';
+
+            try {
+                const response = await fetch(`${API_BASE}/posts`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                const data = await response.json();
+                
+                if (data.success || response.ok) {
+                    const posts = data.posts || [];
+                    displayPosts(posts);
+                } else {
+                    container.innerHTML = '<p style="text-align: center;">Failed to load posts.</p>';
+                }
+            } catch (error) {
+                container.innerHTML = '<p style="text-align: center;">Network connection error.</p>';
+            }
+        }
+
+        // Display posts
+        function displayPosts(posts) {
+            const container = document.getElementById('scheduledPostsList');
+            if (!posts || posts.length === 0) {
+                container.innerHTML = '<div class="message-box" style="justify-content:center; background:rgba(255,255,255,0.05);">No posts found. Create your first post!</div>';
+                return;
+            }
+
+            container.innerHTML = posts.map(post => `
+                <div class="scheduled-post">
+                    <div class="post-meta">
+                        <strong>${escapeHtml(post.title)}</strong>
+                        <span class="status-badge">${post.status ? post.status.toUpperCase() : 'DRAFT'}</span>
+                    </div>
+                    <p style="margin-bottom:15px; color: var(--text-light);">${escapeHtml(post.content).substring(0, 150)}${post.content.length > 150 ? '...' : ''}</p>
+                    <div class="post-meta" style="font-size: 0.85rem;">
+                        <span><i class="fas fa-share-alt"></i> ${post.platforms.join(', ')}</span>
+                        <span><i class="far fa-clock"></i> ${post.scheduledFor ? new Date(post.scheduledFor).toLocaleString() : 'Not scheduled'}</span>
+                    </div>
+                    ${post.media ? `<img src="${escapeHtml(post.media)}" style="max-width: 150px; border-radius: 4px; margin-top: 10px; border:1px solid rgba(255,255,255,0.1);" alt="Post media">` : ''}
+                    <div class="post-actions">
+                        ${post.status === 'draft' || post.status === 'scheduled' ? 
+                            `<button class="btn btn-primary" onclick="publishPost('${post._id}')" style="padding: 8px 16px; font-size: 0.8rem;"><i class="fas fa-paper-plane"></i> Publish</button>` : ''}
+                        <button class="btn btn-danger" onclick="deletePost('${post._id}')" style="padding: 8px 16px; font-size: 0.8rem;"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Publish post
+        async function publishPost(postId, confirmAction = true) {
+            if (confirmAction && !confirm('Are you sure you want to publish this post now?')) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/posts/${postId}/publish`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                const data = await response.json();
+                
+                if (data.success || response.ok) {
+                    if(confirmAction) alert('Published successfully!');
+                    loadPosts();
+                    loadStats();
+                } else {
+                    alert(data.message || 'Publish failed');
+                }
+            } catch (error) {
+                alert('Publish failed: ' + error.message);
+            }
+        }
+
+        // Delete post
+        async function deletePost(postId) {
+            if (!confirm('Are you sure you want to delete this post? This cannot be undone.')) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/posts/${postId}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                
+                if (response.ok) {
+                    loadPosts();
+                    loadStats();
+                } else {
+                    const data = await response.json();
+                    alert(data.message || 'Delete failed');
+                }
+            } catch (error) {
+                alert('Delete failed: ' + error.message);
+            }
+        }
+
+        // Load stats
+        async function loadStats() {
+            if (!authToken) return;
+
+            try {
+                const response = await fetch(`${API_BASE}/stats`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                const data = await response.json();
+                
+                if (data.success || response.ok) {
+                    const stats = data.stats || {};
+                    document.getElementById('statTotal').textContent = stats.total || 0;
+                    document.getElementById('statScheduled').textContent = stats.scheduled || 0;
+                    document.getElementById('statPosted').textContent = stats.posted || 0;
+                    document.getElementById('statDraft').textContent = stats.draft || 0;
+                }
+            } catch (error) {
+                console.error('Stats error:', error);
+            }
+        }
+
+        // Helper: Show message
+        function showMessage(type, message, containerId) {
+            const div = document.getElementById(containerId);
+            div.innerHTML = `<div class="message-box ${type}-message"><i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}"></i> ${message}</div>`;
+            
+            // Auto clear after 5 seconds
+            setTimeout(() => {
+                if(div.innerHTML.includes(message)) {
+                    div.innerHTML = '';
+                }
+            }, 5000);
+        }
+
+        // Helper: Escape HTML to prevent XSS
+        function escapeHtml(unsafe) {
+            if (!unsafe) return '';
+            return unsafe
+                 .replace(/&/g, "&amp;")
+                 .replace(/</g, "&lt;")
+                 .replace(/>/g, "&gt;")
+                 .replace(/"/g, "&quot;")
+                 .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>

@@ -1,253 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- SEO Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Manager | Rauf Husein</title>
+    <title>Rauf Husein | Visionary Entrepreneur, Investor & Speaker in Ghana</title>
+    <meta name="description" content="Rauf Husein - Entrepreneur, Investor & Speaker solving critical challenges in Ghana through real estate, clean water, and HR innovation. Founder of PrimeHR, Ghana Keys, and Nsupure Water.">
+    <meta name="keywords" content="Rauf Husein, Ghana entrepreneur, PrimeHR, Ghana Keys, Nsupure Water, real estate Ghana, clean water Ghana, HR solutions Ghana">
+    <meta name="author" content="Rauf Husein">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Rauf Husein | Visionary Entrepreneur & Innovator">
+    <meta property="og:description" content="Entrepreneur, Investor & Speaker solving critical challenges in Ghana through real estate, clean water, and HR innovation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://raufhusein.site">
+    <meta property="og:image" content="https://raufhusein.site/images/rauf-husein.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rauf Husein | Visionary Entrepreneur & Innovator">
+    <meta name="twitter:description" content="Entrepreneur, Investor & Speaker solving critical challenges in Ghana through real estate, clean water, and HR innovation.">
+    <meta name="twitter:image" content="https://raufhusein.site/images/rauf-husein.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://raufhusein.site">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rauf Husein",
+      "jobTitle": "Entrepreneur, Investor & Speaker",
+      "description": "Visionary entrepreneur focused on solving critical challenges in Ghana through real estate, clean water, and human resource innovation.",
+      "url": "https://raufhusein.site",
+      "sameAs": [
+        "https://www.linkedin.com/in/rauf-husein/",
+        "https://www.instagram.com/rauf_husein/",
+        "https://web.facebook.com/rauf.husein1/",
+        "https://x.com/RaufSwestika",
+        "https://www.tiktok.com/@olonpo"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "PrimeHR"
+      },
+      "knowsAbout": [
+        "Entrepreneurship", 
+        "Real Estate Development", 
+        "Human Resources", 
+        "Clean Water Solutions",
+        "Technology Innovation"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Ghana"
+      }
+    }
+    </script>
+    
     <style>
-        .admin-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
-            padding: 120px 0 80px;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .admin-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .auth-section {
-            text-align: center;
-            padding: 60px 20px;
-            background: var(--primary-light);
-            border-radius: var(--radius-lg);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .auth-section i {
-            font-size: 4rem;
-            color: var(--accent-highlight);
-            margin-bottom: 20px;
-        }
-        
-        .auth-section h2 {
-            margin-bottom: 15px;
-        }
-        
-        .auth-section p {
-            margin-bottom: 30px;
-            color: var(--text-light);
-        }
-        
-        .login-form {
+        /* Image fallback styles */
+        .image-fallback {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
             display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-family: 'Fira Code', monospace;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .profile-img .image-fallback {
+            border-radius: var(--radius-lg);
+            height: 100%;
+        }
+        
+        .project-thumb .image-fallback {
+            height: 100%;
             flex-direction: column;
-            gap: 15px;
-            max-width: 300px;
-            margin: 0 auto;
         }
         
-        .login-form input {
-            padding: 12px;
-            background: var(--primary-dark);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: var(--radius);
-            color: var(--text-light);
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .google-login-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 15px 30px;
-            background: white;
-            color: #333;
-            border: none;
-            border-radius: var(--radius);
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            width: 100%;
-        }
-        
-        .google-login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        
-        .google-login-btn img {
-            width: 24px;
-            height: 24px;
-        }
-        
-        .admin-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            flex-wrap: wrap;
-        }
-        
-        .admin-tab {
-            padding: 15px 25px;
-            background: transparent;
-            border: none;
-            color: var(--text-main);
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: var(--transition);
-            font-family: 'Fira Code', monospace;
-        }
-        
-        .admin-tab.active {
-            color: var(--accent-highlight);
-            border-bottom-color: var(--accent-highlight);
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .post-form {
-            background: var(--primary-light);
-            padding: 30px;
-            border-radius: var(--radius-lg);
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text-header);
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            background: var(--primary-dark);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: var(--radius);
-            color: var(--text-light);
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .platform-selector {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .platform-option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 15px;
-            background: var(--primary-dark);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .platform-option.selected {
-            border-color: var(--accent-highlight);
-            background: rgba(100, 255, 218, 0.1);
-        }
-        
-        .platform-option i {
-            font-size: 1.2rem;
-        }
-        
-        .schedule-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .btn-primary {
-            background: var(--accent-highlight);
-            color: var(--primary-dark);
-        }
-        
-        .btn-primary:hover {
-            background: var(--accent-highlight-alt);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--text-main);
-            color: var(--text-main);
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--accent-highlight);
-            color: var(--accent-highlight);
-        }
-        
-        .btn-danger {
-            background: #ff6b6b;
-            color: white;
-        }
-        
-        .btn-danger:hover {
-            background: #ff5252;
-        }
-        
-        .post-preview {
-            background: var(--primary-light);
-            padding: 25px;
-            border-radius: var(--radius-lg);
-            margin-top: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .preview-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .preview-avatar {
-            width: 40px;
+        /* Logo styling */
+        .logo-img {
             height: 40px;
+            width: 40px;
             border-radius: 50%;
             background: var(--accent-highlight);
             display: flex;
@@ -255,108 +101,58 @@
             justify-content: center;
             color: var(--primary-dark);
             font-weight: bold;
+            font-size: 1.2rem;
         }
         
-        .scheduled-posts {
-            display: grid;
-            gap: 20px;
+        /* Ensure images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
         }
         
-        .scheduled-post {
-            background: var(--primary-light);
-            padding: 20px;
-            border-radius: var(--radius);
-            border-left: 4px solid var(--accent-highlight);
+        /* Social links styling */
+        .social-links a {
+            transition: all 0.3s ease;
         }
         
-        .post-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            color: var(--text-main);
+        .social-links a:hover {
+            transform: translateY(-3px);
         }
         
-        .post-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
+        .social-links a:nth-child(1):hover { /* Instagram */
+            color: #E4405F;
+            border-color: #E4405F;
         }
         
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+        .social-links a:nth-child(2):hover { /* Twitter/X */
+            color: #000000;
+            border-color: #000000;
         }
         
-        .analytics-card {
-            background: var(--primary-light);
-            padding: 25px;
-            border-radius: var(--radius);
-            text-align: center;
+        .social-links a:nth-child(3):hover { /* LinkedIn */
+            color: #0A66C2;
+            border-color: #0A66C2;
         }
         
-        .analytics-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-highlight);
-            margin-bottom: 10px;
+        .social-links a:nth-child(4):hover { /* TikTok */
+            color: #69C9D0;
+            border-color: #69C9D0;
         }
         
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-main);
-        }
-        
-        .loading i {
-            font-size: 2rem;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
-        }
-        
-        .error-message {
-            background: #ff6b6b;
-            color: white;
-            padding: 15px;
-            border-radius: var(--radius);
-            margin-bottom: 20px;
-        }
-        
-        .success-message {
-            background: var(--accent-highlight);
-            color: var(--primary-dark);
-            padding: 15px;
-            border-radius: var(--radius);
-            margin-bottom: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .schedule-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .admin-tabs {
-                gap: 5px;
-            }
-            
-            .admin-tab {
-                padding: 12px 15px;
-                font-size: 0.85rem;
-            }
+        .social-links a:nth-child(5):hover { /* Facebook */
+            color: #1877F2;
+            border-color: #1877F2;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-img">RH</div>
+            <a href="/" class="logo">
+                <div class="logo-img">
+                    <img src="images/logo.png" alt="Rauf Husein Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
                 RAUF HUSEIN
             </a>
             <button class="menu-toggle" aria-label="Toggle Menu">
@@ -364,512 +160,243 @@
             </button>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html">01. Home</a></li>
-                    <li><a href="index.html#about">02. About</a></li>
-                    <li><a href="index.html#portfolio">03. Portfolio</a></li>
-                    <li><a href="index.html#ventures">04. Ventures</a></li>
+                    <li><a href="#hero" class="active">01. Home</a></li>
+                    <li><a href="#about">02. About</a></li>
+                    <li><a href="#portfolio">03. Portfolio</a></li>
+                    <li><a href="#ventures">04. Ventures</a></li>
                     <li><a href="categories.html">05. Categories</a></li>
                     <li><a href="products.html">06. Marketplace</a></li>
-                    <li><a href="contact.html">07. Contact</a></li>
-                    <li><a href="admin.html" class="active">08. Admin</a></li>
+                    <li><a href="#contact">07. Contact</a></li>
+                    <li><a href="admin.html">08. RH/Admin</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="admin-hero">
-        <div class="container">
-            <h1>Content Manager</h1>
-            <p>Create, schedule, and manage your social media posts</p>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container hero-content">
+            <p class="hero-subtitle">Hi, my name is</p>
+            <h1>Rauf Husein.</h1>
+            <h1 style="color: var(--text-header);">I build sustainable futures.</h1>
+            <p>
+                I'm an Entrepreneur, Investor, and Speaker focused on solving critical challenges in Ghana through 
+                real estate, clean water, and human resource innovation. My mission is to create lasting impact through technology and sustainable business models.
+            </p>
+            <a href="#portfolio" class="cta-btn">Explore My Work</a>
         </div>
     </section>
 
-    <main class="admin-container">
-        <!-- Auth Section (shown when not logged in) -->
-        <div id="authSection" class="auth-section">
-            <i class="fas fa-lock"></i>
-            <h2>Admin Access Required</h2>
-            <p>Enter your admin password to access the Content Manager.</p>
-            <form id="loginForm" class="login-form">
-                <input type="password" id="password" placeholder="Admin Password" required>
-                <button type="submit" class="google-login-btn">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Sign In
-                </button>
-            </form>
-        </div>
-
-        <!-- Content Manager (shown when logged in) -->
-        <div id="contentManager" style="display: none;">
-            <div class="admin-tabs">
-                <button class="admin-tab active" data-tab="composer">Create Post</button>
-                <button class="admin-tab" data-tab="scheduled">Scheduled Posts</button>
-                <button class="admin-tab" data-tab="analytics">Analytics</button>
-                <button class="admin-tab" data-tab="settings">Settings</button>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">About Me</h2>
             </div>
-
-            <!-- Composer Tab -->
-            <div class="tab-content active" id="composer">
-                <div id="composerMessages"></div>
-                <div class="post-form">
-                    <div class="form-group">
-                        <label>Select Platforms *</label>
-                        <div class="platform-selector" id="platformSelector">
-                            <div class="platform-option" data-platform="twitter">
-                                <i class="fab fa-twitter"></i>
-                                <span>Twitter</span>
-                            </div>
-                            <div class="platform-option" data-platform="linkedin">
-                                <i class="fab fa-linkedin"></i>
-                                <span>LinkedIn</span>
-                            </div>
-                            <div class="platform-option" data-platform="facebook">
-                                <i class="fab fa-facebook"></i>
-                                <span>Facebook</span>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm a visionary entrepreneur who enjoys creating solutions that live on the internet and in the physical world. My journey started with a vision to transform the Human Resource landscape in Ghana, and has since expanded to address other critical challenges.</p>
+                    <p>Today, I have the privilege of leading <strong style="color: var(--accent-highlight)">PrimeHR</strong>, <strong style="color: var(--accent-highlight)">Ghana Keys</strong>, and <strong style="color: var(--accent-highlight)">Nsupure Water</strong>. My main focus is building accessible products and inclusive systems that drive economic growth and improve quality of life across Ghana.</p>
+                    <p>When I'm not building businesses, I enjoy mentoring young entrepreneurs, speaking at industry events, and exploring new technologies that can solve real-world problems.</p>
+                </div>
+                <div class="about-img">
+                    <div class="profile-img">
+                        <img src="images/rauf-husein.jpg" 
+                             onerror="this.style.display='none'; document.getElementById('profile-fallback').style.display='flex';"
+                             alt="Rauf Husein - Entrepreneur and Innovator in Ghana">
+                        <div id="profile-fallback" class="image-fallback" style="display: none;">
+                            <div>
+                                <i class="fas fa-user" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                                <p>Rauf Husein</p>
+                                <p style="font-size: 0.8rem;">Entrepreneur & Innovator</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="postTitle">Post Title *</label>
-                        <input type="text" id="postTitle" placeholder="Enter post title...">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="postContent">Post Content *</label>
-                        <textarea id="postContent" placeholder="What's on your mind?"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="postMedia">Media URL (optional)</label>
-                        <input type="url" id="postMedia" placeholder="https://example.com/image.jpg">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="postTags">Tags (comma-separated)</label>
-                        <input type="text" id="postTags" placeholder="marketing, social media, business">
-                    </div>
-
-                    <div class="schedule-options">
-                        <div class="form-group">
-                            <label for="scheduleType">Schedule Type *</label>
-                            <select id="scheduleType">
-                                <option value="draft">Save as Draft</option>
-                                <option value="now">Post Now</option>
-                                <option value="schedule">Schedule for Later</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group" id="scheduleDateTimeGroup" style="display: none;">
-                            <label for="postDateTime">Schedule Date & Time *</label>
-                            <input type="datetime-local" id="postDateTime">
-                        </div>
-                    </div>
-
-                    <div style="display: flex; gap: 15px; margin-top: 20px;">
-                        <button class="btn btn-primary" id="savePostBtn">Save Post</button>
-                        <button class="btn btn-secondary" id="clearFormBtn">Clear Form</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scheduled Posts Tab -->
-            <div class="tab-content" id="scheduled">
-                <h2>Scheduled & Posted Content</h2>
-                <div id="scheduledPostsList" class="scheduled-posts">
-                    <div class="loading">
-                        <i class="fas fa-spinner"></i>
-                        <p>Loading posts...</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Analytics Tab -->
-            <div class="tab-content" id="analytics">
-                <h2>Post Analytics</h2>
-                <div class="analytics-grid" id="analyticsGrid">
-                    <div class="analytics-card">
-                        <div class="analytics-number" id="statTotal">0</div>
-                        <div>Total Posts</div>
-                    </div>
-                    <div class="analytics-card">
-                        <div class="analytics-number" id="statScheduled">0</div>
-                        <div>Scheduled</div>
-                    </div>
-                    <div class="analytics-card">
-                        <div class="analytics-number" id="statPosted">0</div>
-                        <div>Posted</div>
-                    </div>
-                    <div class="analytics-card">
-                        <div class="analytics-number" id="statDraft">0</div>
-                        <div>Drafts</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Settings Tab -->
-            <div class="tab-content" id="settings">
-                <h2>Account Settings</h2>
-                <div class="post-form">
-                    <div class="form-group">
-                        <label>User Information</label>
-                        <div id="userInfo" style="padding: 15px; background: var(--primary-dark); border-radius: var(--radius);">
-                            <p><strong>Status:</strong> Logged in as Admin</p>
-                        </div>
-                    </div>
-                    <button class="btn btn-danger" id="logoutBtn">Logout</button>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <script src="scripts.js"></script>
-    <script>
-        // Content Manager - API Integration
-        const API_BASE = 'https://my-home-mn7b.onrender.com/api';
-        let authToken = localStorage.getItem('adminToken');
-        let selectedPlatforms = new Set();
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Technical Portfolio</h2>
+            </div>
+            
+            <div class="tech-stack-container">
+                <p>Technologies I work with:</p>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">React / Next.js</span>
+                <span class="tech-tag">Flutter / Dart</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">SQL/NoSQL</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">GraphQL</span>
+            </div>
 
-        // Check auth on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            if (authToken) {
-                verifyToken();
-            } else {
-                showAuthSection();
-            }
-            initEventListeners();
-        });
-
-        // Initialize event listeners
-        function initEventListeners() {
-            // Login form
-            const loginForm = document.getElementById('loginForm');
-            if (loginForm) {
-                loginForm.addEventListener('submit', handleLogin);
-            }
-
-            // Platform selection
-            document.querySelectorAll('.platform-option').forEach(option => {
-                option.addEventListener('click', () => {
-                    const platform = option.dataset.platform;
-                    if (selectedPlatforms.has(platform)) {
-                        selectedPlatforms.delete(platform);
-                        option.classList.remove('selected');
-                    } else {
-                        selectedPlatforms.add(platform);
-                        option.classList.add('selected');
-                    }
-                });
-            });
-
-            // Schedule type toggle
-            const scheduleType = document.getElementById('scheduleType');
-            if (scheduleType) {
-                scheduleType.addEventListener('change', function() {
-                    document.getElementById('scheduleDateTimeGroup').style.display = 
-                        this.value === 'schedule' ? 'block' : 'none';
-                });
-            }
-
-            // Tab switching
-            document.querySelectorAll('.admin-tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const targetTab = tab.dataset.tab;
-                    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
-                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                    tab.classList.add('active');
-                    document.getElementById(targetTab).classList.add('active');
-                    
-                    if (targetTab === 'scheduled') loadPosts();
-                    if (targetTab === 'analytics') loadStats();
-                });
-            });
-
-            // Save post
-            const savePostBtn = document.getElementById('savePostBtn');
-            if (savePostBtn) {
-                savePostBtn.addEventListener('click', savePost);
-            }
-
-            // Clear form
-            const clearFormBtn = document.getElementById('clearFormBtn');
-            if (clearFormBtn) {
-                clearFormBtn.addEventListener('click', clearForm);
-            }
-
-            // Logout
-            const logoutBtn = document.getElementById('logoutBtn');
-            if (logoutBtn) {
-                logoutBtn.addEventListener('click', logout);
-            }
-        }
-
-        // Login handler
-        async function handleLogin(e) {
-            e.preventDefault();
-            const password = document.getElementById('password').value.trim();
-            if (!password) {
-                alert('Password required');
-                return;
-            }
-
-            try {
-                const response = await fetch(`${API_BASE}/login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ password })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    authToken = data.token;
-                    localStorage.setItem('adminToken', authToken);
-                    showContentManager();
-                    loadPosts();
-                    loadStats();
-                } else {
-                    alert(data.message || 'Invalid password');
-                }
-            } catch (error) {
-                console.error('Login error:', error);
-                alert('Login failed. Check console for details.');
-            }
-        }
-
-        // Verify token
-        async function verifyToken() {
-            try {
-                const response = await fetch(`${API_BASE}/verify`, {
-                    headers: { 'Authorization': `Bearer ${authToken}` }
-                });
-
-                if (response.ok) {
-                    showContentManager();
-                    loadPosts();
-                    loadStats();
-                } else {
-                    localStorage.removeItem('adminToken');
-                    authToken = null;
-                    showAuthSection();
-                }
-            } catch (error) {
-                localStorage.removeItem('adminToken');
-                authToken = null;
-                showAuthSection();
-            }
-        }
-
-        // Show/hide sections
-        function showAuthSection() {
-            document.getElementById('authSection').style.display = 'block';
-            document.getElementById('contentManager').style.display = 'none';
-        }
-
-        function showContentManager() {
-            document.getElementById('authSection').style.display = 'none';
-            document.getElementById('contentManager').style.display = 'block';
-            document.getElementById('userInfo').innerHTML = '<p><strong>Status:</strong> Logged in as Admin</p>';
-        }
-
-        // Logout
-        function logout() {
-            if (confirm('Logout?')) {
-                localStorage.removeItem('adminToken');
-                authToken = null;
-                showAuthSection();
-            }
-        }
-
-        // Save post
-        async function savePost() {
-            const title = document.getElementById('postTitle').value.trim();
-            const content = document.getElementById('postContent').value.trim();
-            const media = document.getElementById('postMedia').value.trim();
-            const tags = document.getElementById('postTags').value.trim();
-            const scheduleType = document.getElementById('scheduleType').value;
-            const dateTime = document.getElementById('postDateTime').value;
-
-            if (!title || !content) {
-                return showMessage('error', 'Title and content required');
-            }
-            if (selectedPlatforms.size === 0) {
-                return showMessage('error', 'Select at least one platform');
-            }
-            if (scheduleType === 'schedule' && !dateTime) {
-                return showMessage('error', 'Select date and time');
-            }
-
-            const postData = {
-                title,
-                content,
-                media: media || null,
-                platforms: Array.from(selectedPlatforms),
-                tags: tags ? tags.split(',').map(t => t.trim()) : [],
-                scheduledFor: scheduleType === 'schedule' ? new Date(dateTime).toISOString() : null
-            };
-
-            try {
-                const response = await fetch(`${API_BASE}/posts`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${authToken}`
-                    },
-                    body: JSON.stringify(postData)
-                });
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    showMessage('success', result.message);
-                    clearForm();
-                    if (scheduleType === 'now') {
-                        await publishPost(result.post._id);
-                    }
-                    loadPosts();
-                    loadStats();
-                } else {
-                    showMessage('error', result.message);
-                }
-            } catch (error) {
-                showMessage('error', 'Network error: ' + error.message);
-            }
-        }
-
-        // Clear form
-        function clearForm() {
-            document.getElementById('postTitle').value = '';
-            document.getElementById('postContent').value = '';
-            document.getElementById('postMedia').value = '';
-            document.getElementById('postTags').value = '';
-            document.getElementById('scheduleType').value = 'draft';
-            document.getElementById('postDateTime').value = '';
-            document.getElementById('scheduleDateTimeGroup').style.display = 'none';
-            selectedPlatforms.clear();
-            document.querySelectorAll('.platform-option').forEach(o => o.classList.remove('selected'));
-            document.getElementById('composerMessages').innerHTML = '';
-        }
-
-        // Load posts
-        async function loadPosts() {
-            if (!authToken) return;
-
-            const container = document.getElementById('scheduledPostsList');
-            container.innerHTML = '<div class="loading"><i class="fas fa-spinner"></i><p>Loading posts...</p></div>';
-
-            try {
-                const response = await fetch(`${API_BASE}/posts`, {
-                    headers: { 'Authorization': `Bearer ${authToken}` }
-                });
-                const data = await response.json();
-                if (data.success) {
-                    displayPosts(data.posts);
-                } else {
-                    container.innerHTML = '<p style="text-align: center;">Failed to load posts</p>';
-                }
-            } catch (error) {
-                container.innerHTML = '<p style="text-align: center;">Network error loading posts</p>';
-            }
-        }
-
-        // Display posts
-        function displayPosts(posts) {
-            const container = document.getElementById('scheduledPostsList');
-            if (!posts || posts.length === 0) {
-                container.innerHTML = '<p style="text-align: center;">No posts found</p>';
-                return;
-            }
-
-            container.innerHTML = posts.map(post => `
-                <div class="scheduled-post">
-                    <div class="post-meta">
-                        <strong>${post.title}</strong>
-                        <span style="background: var(--accent-highlight); color: var(--primary-dark); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">${post.status.toUpperCase()}</span>
+            <div class="grid-3">
+                <div class="project-card-featured">
+                    <div class="project-thumb">
+                        <img src="images/primehr-dashboard.jpg" 
+                             onerror="this.style.display='none'; document.getElementById('project1-fallback').style.display='flex';"
+                             alt="PrimeHR Dashboard - HR Management Software">
+                        <div id="project1-fallback" class="image-fallback" style="display: none;">
+                            <i class="fas fa-desktop" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>PrimeHR Dashboard</p>
+                            <p style="font-size: 0.8rem;">HR Management Platform</p>
+                        </div>
                     </div>
-                    <p>${post.content.substring(0, 150)}${post.content.length > 150 ? '...' : ''}</p>
-                    <div class="post-meta">
-                        <span>${post.platforms.join(', ')}</span>
-                        <span>${post.scheduledFor ? new Date(post.scheduledFor).toLocaleString() : 'Not scheduled'}</span>
-                    </div>
-                    ${post.media ? `<img src="${post.media}" style="max-width: 200px; border-radius: 4px; margin-top: 10px;" alt="Post media">` : ''}
-                    <div class="post-actions">
-                        ${post.status === 'draft' || post.status === 'scheduled' ? 
-                            `<button class="btn btn-primary" onclick="publishPost('${post._id}')">Publish Now</button>` : ''}
-                        <button class="btn btn-danger" onclick="deletePost('${post._id}')">Delete</button>
+                    <div class="project-content">
+                        <span class="project-category">Web Application</span>
+                        <h3>PrimeHR Dashboard</h3>
+                        <p>A comprehensive SaaS platform for HR management featuring payroll automation, employee tracking, performance analytics, and leave management systems. Built to streamline HR operations for Ghanaian businesses.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-list">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            `).join('');
-        }
 
-        // Publish post
-        async function publishPost(postId) {
-            if (!confirm('Publish this post now?')) return;
-            try {
-                const response = await fetch(`${API_BASE}/posts/${postId}/publish`, {
-                    method: 'POST',
-                    headers: { 'Authorization': `Bearer ${authToken}` }
-                });
-                const data = await response.json();
-                if (data.success) {
-                    alert('Published successfully!');
-                    loadPosts();
-                    loadStats();
-                } else {
-                    alert(data.message || 'Publish failed');
-                }
-            } catch (error) {
-                alert('Publish failed: ' + error.message);
-            }
-        }
+                <div class="project-card-featured">
+                    <div class="project-thumb">
+                        <img src="images/nsupure-app.jpg" 
+                             onerror="this.style.display='none'; document.getElementById('project2-fallback').style.display='flex';"
+                             alt="Nsupure Delivery App - Water Delivery Service">
+                        <div id="project2-fallback" class="image-fallback" style="display: none;">
+                            <i class="fas fa-mobile-alt" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>Nsupure Delivery</p>
+                            <p style="font-size: 0.8rem;">Mobile App</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Mobile App (iOS/Android)</span>
+                        <h3>Nsupure Delivery</h3>
+                        <p>A cross-platform logistics app allowing customers to order water in bulk with real-time GPS tracking, mobile money integration, and delivery scheduling. Designed to improve access to clean water across Ghana.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-list">
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                                <span>Dart</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" aria-label="App Store"><i class="fab fa-app-store"></i></a>
+                                <a href="#" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        // Delete post
-        async function deletePost(postId) {
-            if (!confirm('Delete this post?')) return;
-            try {
-                const response = await fetch(`${API_BASE}/posts/${postId}`, {
-                    method: 'DELETE',
-                    headers: { 'Authorization': `Bearer ${authToken}` }
-                });
-                const data = await response.json();
-                if (response.ok) {
-                    alert('Deleted successfully!');
-                    loadPosts();
-                    loadStats();
-                } else {
-                    alert(data.message || 'Delete failed');
-                }
-            } catch (error) {
-                alert('Delete failed: ' + error.message);
-            }
-        }
+                <div class="project-card-featured">
+                    <div class="project-thumb">
+                        <img src="images/construction-manager.jpg" 
+                             onerror="this.style.display='none'; document.getElementById('project3-fallback').style.display='flex';"
+                             alt="Construction Scaffold Manager - Safety Compliance Software">
+                        <div id="project3-fallback" class="image-fallback" style="display: none;">
+                            <i class="fas fa-tools" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>Construction Manager</p>
+                            <p style="font-size: 0.8rem;">Safety Compliance Software</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Enterprise Software</span>
+                        <h3>Construction Scaffold Manager</h3>
+                        <p>Inventory and safety compliance software built for construction sites to track scaffolding assets, maintenance schedules, and safety inspections. Helps ensure compliance with Ghanaian construction regulations.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-list">
+                                <span>Python</span>
+                                <span>SQL</span>
+                                <span>Django</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Case Study"><i class="fas fa-file-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Load stats
-        async function loadStats() {
-            if (!authToken) return;
+    <!-- Ventures Section -->
+    <section id="ventures" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Featured Ventures</h2>
+            </div>
+            <div class="ventures-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>PRIME/HR</h3>
+                    <p>Revolutionary human resources platform transforming recruitment, talent management, and workforce development across Ghana. Our AI-powered matching system connects employers with the best talent.</p>
+                    <a href="#" class="card-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                </div>
 
-            try {
-                const response = await fetch(`${API_BASE}/stats`, {
-                    headers: { 'Authorization': `Bearer ${authToken}` }
-                });
-                const data = await response.json();
-                if (data.success) {
-                    document.getElementById('statTotal').textContent = data.stats.total || 0;
-                    document.getElementById('statScheduled').textContent = data.stats.scheduled || 0;
-                    document.getElementById('statPosted').textContent = data.stats.posted || 0;
-                    document.getElementById('statDraft').textContent = data.stats.draft || 0;
-                }
-            } catch (error) {
-                console.error('Stats error:', error);
-            }
-        }
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-city"></i></div>
+                    <h3>Ghana Keys</h3>
+                    <p>Real estate development company creating modern, affordable living spaces and commercial properties. We focus on sustainable construction practices and community-oriented developments.</p>
+                    <a href="#" class="card-link">View Properties <i class="fas fa-arrow-right"></i></a>
+                </div>
 
-        // Show message
-        function showMessage(type, message) {
-            const div = document.getElementById('composerMessages');
-            div.innerHTML = `<div class="${type}-message">${message}</div>`;
-            setTimeout(() => div.innerHTML = '', 5000);
-        }
-    </script>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Nsupure Water</h3>
+                    <p>Clean water initiative providing sustainable water solutions to communities across Ghana. Our innovative purification systems and delivery network ensure access to safe drinking water for all.</p>
+                    <a href="#" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05.</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; margin-bottom: 40px;">
+                    I'm always interested in new opportunities, collaborations, and discussions about innovation in Ghana and beyond. Whether you have a project in mind or just want to connect, feel free to reach out.
+                </p>
+                <a href="mailto:contact@raufhusein.site" class="cta-btn">Say Hello</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.instagram.com/rauf_husein/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/RaufSwestika" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/rauf-husein/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@olonpo" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://web.facebook.com/rauf.husein1/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p class="footer-text">Designed & Built by Rauf Husein</p>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
