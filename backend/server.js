@@ -478,12 +478,11 @@ async function initScheduler() {
 }
 
 // ============ START SERVER ============
-
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, async () => {
+app.listen(PORT, '0.0.0.0', async () => {
   console.log('\n========================================');
-  console.log(`🚀 Server: http://localhost:${PORT}`);
+  console.log(`🚀 Server: http://0.0.0.0:${PORT}`);  // Updated log for clarity
   console.log(`🌐 Frontend: ${process.env.FRONTEND_URL}`);
   console.log('========================================\n');
   
