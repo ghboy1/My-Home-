@@ -186,6 +186,15 @@ app.post('/api/posts', verifyToken, async (req, res) => {
         message: 'Title, content, and platforms are required' 
       });
     }
+
+    // Validate platforms (add your supported platforms here)
+    const validPlatforms = ['twitter', 'linkedin', 'facebook'];  // Customize as needed
+    if (!platforms.every(p => validPlatforms.includes(p))) {
+      return res.status(400).json({ 
+        success: false, 
+        message: `Invalid platforms. Supported: ${validPlatforms.join(', ')}` 
+      });
+    }
     
     const post = await Post.create({
       title,
@@ -234,10 +243,23 @@ app.put('/api/posts/:id', verifyToken, async (req, res) => {
         message: 'Cannot update published posts' 
       });
     }
+
+    // Validate platforms if updated
+    if (req.body.platforms && !req.body.platforms.every(p => ['twitter', 'linkedin', 'facebook'].includes(p))) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Invalid platforms. Supported: twitter, linkedin, facebook' 
+      });
+    }
     
     Object.assign(post, req.body);
     post.updatedAt = new Date();
     await post.save();
+    
+    // Re-schedule if scheduledFor changed
+    if (req.body.scheduledFor && new Date(req.body.scheduledFor) > new Date()) {
+      schedulePost(post);
+    }
     
     res.json({ 
       success: true, 
@@ -357,7 +379,7 @@ app.get('/health', (req, res) => {
 const schedule = require('node-schedule');
 const scheduledJobs = new Map();
 
-// Publish function
+// Publish function (improved with better error simulation/handling for future real integrations)
 async function publishPost(post) {
   console.log(`📤 Publishing: ${post.title}`);
   
@@ -365,27 +387,44 @@ async function publishPost(post) {
   const postErrors = [];
   
   for (const platform of post.platforms) {
+    let success = true;
+    let message = `Posted to ${platform}`;
+    let postId = `${platform}_${Date.now()}`;
+    
     try {
-      // Simulator mode - just log the post
+      // TODO: Real integration here, e.g.:
+      // if (platform === 'twitter') { await postToTwitter(post); }
+      // else if (platform === 'linkedin') { await postToLinkedIn(post); }
+      
+      // Simulator (add a rare random "error" for testing)
+      if (Math.random() < 0.1) {  // 10% simulated failure
+        throw new Error(`Simulator error: ${platform} API timeout`);
+      }
+      
+      // Simulator logs
       console.log(`\n📱 ${platform.toUpperCase()}`);
       console.log(`Title: ${post.title}`);
       console.log(`Content: ${post.content}`);
       if (post.media) console.log(`Media: ${post.media}`);
       
-      results.push({
-        platform,
-        success: true,
-        message: `Posted to ${platform}`,
-        postId: `${platform}_${Date.now()}`,
-        postedAt: new Date()
-      });
     } catch (error) {
+      success = false;
+      message = `Failed: ${error.message}`;
       postErrors.push({
         platform,
         error: error.message,
         timestamp: new Date()
       });
+      console.error(`❌ ${platform} error:`, error.message);
     }
+    
+    results.push({
+      platform,
+      success,
+      message,
+      postId,
+      postedAt: new Date()
+    });
   }
   
   post.results = results;
@@ -394,7 +433,7 @@ async function publishPost(post) {
   post.updatedAt = new Date();
   await post.save();
   
-  console.log(`✅ Published: ${post.title}`);
+  console.log(`✅ Published: ${post.title} (${postErrors.length} errors)`);
 }
 
 // Schedule post
