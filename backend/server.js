@@ -27,7 +27,11 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: [
+    'https://raufhusein.site', 
+    'https://www.raufhusein.site', 
+    process.env.FRONTEND_URL || '*'
+  ],
   credentials: true
 }));
 app.use(express.json());
