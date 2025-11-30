@@ -1,4 +1,4 @@
-// FINAL WORKING MOBILE MENU SCRIPT - Replace your entire script.js with this
+// OPTIMIZED MOBILE MENU SCRIPT - Save as script.js (without the 's')
 
 document.addEventListener('DOMContentLoaded', function() {
     // ========== MOBILE MENU ==========
@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            closeMenu();
+            // Small delay to allow navigation
+            setTimeout(closeMenu, 100);
         });
     });
 
@@ -73,6 +74,13 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
         });
     }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
 
     // ========== HEADER SCROLL EFFECT ==========
     let lastScroll = 0;
@@ -153,13 +161,46 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
 
+    // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
     // ========== CONTACT FORM ==========
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message. We will get back to you soon!');
-            this.reset();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                alert('Thank you for your message. We will get back to you soon!');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         });
     }
 
@@ -207,13 +248,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerNavItems = document.querySelectorAll('.footer-nav-item');
     footerNavItems.forEach((item, index) => {
         item.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const sections = ['#hero', '#about', '#featured-projects', '#speaking', '#contact', '#social'];
-            const targetSection = sections[index];
-            
-            if (targetSection && targetSection !== '#social') {
-                const target = document.querySelector(targetSection);
+            // Only prevent default if it's an anchor link
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ 
                         behavior: 'smooth',
@@ -228,5 +268,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.style.transform = '';
             }, 150);
         });
+    });
+
+    // ========== ADD LOADING ANIMATION ==========
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
     });
 });
