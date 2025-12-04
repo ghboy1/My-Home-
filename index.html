@@ -31,7 +31,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -67,7 +67,68 @@
     }
     </script>
     
+    <!-- Three.js for WebGL -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.min.js"></script>
+    
+    <!-- Vanilla Tilt for 3D interactions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    
     <style>
+        /* Root variables for light and dark modes */
+        :root {
+            --bg-main: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-main: #1a1a1a;
+            --text-header: #333333;
+            --accent-highlight: #4a90e2;
+            --primary-light: #4a90e2;
+            --primary-dark: #2b5c9e;
+            --neon-glow: #00ffff;
+            --radius-lg: 12px;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.05);
+            --shadow-neon: 0 0 10px var(--neon-glow);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --perspective: 1000px;
+        }
+
+        [data-theme="dark"] {
+            --bg-main: #121212;
+            --bg-secondary: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-header: #ffffff;
+            --accent-highlight: #64b5f6;
+            --primary-light: #64b5f6;
+            --primary-dark: #1976d2;
+            --neon-glow: #00ffff;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.2);
+            --shadow-neon: 0 0 15px var(--neon-glow);
+        }
+
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            transition: var(--transition);
+            scroll-behavior: smooth;
+            font-variation-settings: 'wght' 400;
+            perspective: var(--perspective);
+            position: relative;
+        }
+
+        /* Hero WebGL Background */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
         /* Image fallback styles */
         .image-fallback {
             background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
@@ -90,7 +151,7 @@
             flex-direction: column;
         }
         
-        /* Logo styling */
+        /* Logo styling with 3D rotation */
         .logo-img {
             height: 40px;
             width: 40px;
@@ -102,21 +163,51 @@
             color: var(--primary-dark);
             font-weight: bold;
             font-size: 1.2rem;
+            transition: var(--transition);
+            transform-style: preserve-3d;
+        }
+
+        .logo:hover .logo-img {
+            transform: rotateY(180deg);
+            box-shadow: var(--shadow-neon);
         }
         
         /* Ensure images are responsive */
         img {
             max-width: 100%;
             height: auto;
+            transition: var(--transition);
         }
         
-        /* Social links styling */
+        /* Social links styling with micro-interactions and neon glow */
         .social-links a {
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-neon);
+        }
+        
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        .social-links a:hover::before {
+            width: 200px;
+            height: 200px;
         }
         
         .social-links a:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05) rotateX(10deg);
+            box-shadow: var(--shadow-neon);
         }
         
         .social-links a:nth-child(1):hover { /* Instagram */
@@ -143,9 +234,178 @@
             color: #1877F2;
             border-color: #1877F2;
         }
+
+        /* Enhanced Hero animations with particle effect simulation */
+        :root {
+    --hero-bg-1: #01070e; /* you can change these default colors */
+    --hero-bg-2: #031140;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--hero-bg-1) 0%, var(--hero-bg-2) 100%);
+    animation: gradientShift 10s ease infinite, pulseGlow 2s ease-in-out infinite alternate;
+    background-size: 200% 200%;
+}
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 20px var(--neon-glow); }
+            100% { box-shadow: 0 0 40px var(--neon-glow); }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: particleFloat 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(0) scale(1); opacity: 0.5; }
+            50% { transform: translateY(-50px) scale(1.2); opacity: 0.8; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+
+        .hero-content > * {
+            opacity: 0;
+            transform: translateY(20px) rotateX(-10deg);
+            animation: fadeInUp3D 1s ease forwards;
+            transform-style: preserve-3d;
+        }
+
+        .hero-content p { animation-delay: 0.2s; }
+        .hero-content h1:first-of-type { animation-delay: 0.4s; }
+        .hero-content h1:nth-of-type(2) { animation-delay: 0.6s; }
+        .hero-content .cta-btn { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp3D {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        /* Section fade-in with 3D entrance */
+        .section {
+            opacity: 0;
+            transform: translateY(50px) rotateX(-15deg);
+            transition: opacity 1s ease, transform 1s ease;
+            transform-style: preserve-3d;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+
+        /* Glassmorphism for cards with 3D flip */
+        .card, .project-card-featured {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            perspective: var(--perspective);
+        }
+
+        .card:hover, .project-card-featured:hover {
+            transform: translateY(-5px) rotateY(5deg) rotateX(5deg);
+            box-shadow: var(--shadow-neon);
+        }
+
+        /* Parallax effect with 3D depth */
+        .about-img, .project-thumb {
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .about-img img, .project-thumb img {
+            transition: transform 0.5s ease;
+            transform: translateZ(20px);
+        }
+
+        .about-img:hover img, .project-thumb:hover img {
+            transform: scale(1.05) translateZ(40px);
+        }
+
+        /* Theme toggle with rotation */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(360deg);
+        }
+
+        /* Enhanced typography with variable fonts */
+        h1, h2, h3 {
+            font-variation-settings: 'wght' 700;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 5px var(--neon-glow);
+        }
+
+        p {
+            font-variation-settings: 'wght' 400;
+            line-height: 1.8;
+        }
+
+        /* Accessibility improvements */
+        a:focus, button:focus {
+            outline: 2px solid var(--accent-highlight);
+            outline-offset: 2px;
+            box-shadow: var(--shadow-neon);
+        }
+
+        /* Futuristic nav menu animations */
+        .nav-menu li a {
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-glow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu li a:hover {
+            text-shadow: 0 0 5px var(--neon-glow);
+            transform: translateZ(10px);
+        }
     </style>
 </head>
-<body>
+<body data-theme="light">
     <!-- Header -->
     <header>
         <div class="container nav-container">
@@ -170,11 +430,15 @@
                     <li><a href="admin.html">08. RH/Admin</a></li>
                 </ul>
             </nav>
+            <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
+        <canvas id="hero-bg"></canvas>
         <div class="container hero-content">
             <p class="hero-subtitle">Hi, my name is</p>
             <h1>Rauf Husein.</h1>
@@ -240,9 +504,9 @@
             </div>
 
             <div class="grid-3">
-                <div class="project-card-featured">
+                <div class="project-card-featured" data-tilt>
                     <div class="project-thumb">
-                        <img src="images/primehr-dashboard.png" 
+                        <img src="https://www.sketchappsources.com/resources/source-image/hr-management-dashboard-prateeksaini2802.png" 
                              onerror="this.style.display='none'; document.getElementById('project1-fallback').style.display='flex';"
                              alt="PrimeHR Dashboard - HR Management Software">
                         <div id="project1-fallback" class="image-fallback" style="display: none;">
@@ -263,15 +527,15 @@
                             </div>
                             <div class="project-links">
                                 <a href="#" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
-                                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://prime-hr.com/" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card-featured">
+                <div class="project-card-featured" data-tilt>
                     <div class="project-thumb">
-                        <img src="images/nsupureapp.png" 
+                        <img src="https://cdn.dribbble.com/userupload/24460900/file/original-12f1feced522f61b7215f7a28d1b4952.png" 
                              onerror="this.style.display='none'; document.getElementById('project2-fallback').style.display='flex';"
                              alt="Nsupure Delivery App - Water Delivery Service">
                         <div id="project2-fallback" class="image-fallback" style="display: none;">
@@ -298,9 +562,9 @@
                     </div>
                 </div>
 
-                <div class="project-card-featured">
+                <div class="project-card-featured" data-tilt>
                     <div class="project-thumb">
-                        <img src="images/construction manager.png" 
+                        <img src="https://skaffr.co.uk/screenshots/project-single.jpg" 
                              onerror="this.style.display='none'; document.getElementById('project3-fallback').style.display='flex';"
                              alt="Construction Scaffold Manager - Safety Compliance Software">
                         <div id="project3-fallback" class="image-fallback" style="display: none;">
@@ -327,7 +591,7 @@
                     </div>
                 </div>
 
-                <div class="project-card-featured">
+                <div class="project-card-featured" data-tilt>
                     <div class="project-thumb">
                         <img src="https://cdnblog.webkul.com/blog/wp-content/uploads/2022/11/pwa-wc.webkul.com_woocommerce-pos-greetings-text-via-whatsapp_pos_pay-1200x943.png" 
                              onerror="this.style.display='none'; document.getElementById('project4-fallback').style.display='flex';"
@@ -349,14 +613,14 @@
                                 <span>WhatsApp API</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/ghboy1/whatsapp-pos" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
                                 <a href="https://whatsapp-pos.vercel.app/" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card-featured">
+                <div class="project-card-featured" data-tilt>
                     <div class="project-thumb">
                         <img src="https://www.geckoboard.com/uploads/SaaS-dashboard-example.png" 
                              onerror="this.style.display='none'; document.getElementById('project5-fallback').style.display='flex';"
@@ -383,7 +647,7 @@
                     </div>
                 </div>
 
-                <div class="project-card-featured">
+                <div class="project-card-featured" data-tilt>
                     <div class="project-thumb">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROlT5mgPeiThWgbhmWiZHdu0rb_yw8iPyNRts_v_jJEulOJmhx&s" 
                              onerror="this.style.display='none'; document.getElementById('project6-fallback').style.display='flex';"
@@ -411,7 +675,7 @@
                     </div>
                 </div>
 
-                <div class="project-card-featured">
+                <div class="project-card-featured" data-tilt>
                     <div class="project-thumb">
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1945880/header.jpg?t=1661181789" 
                              onerror="this.style.display='none'; document.getElementById('project7-fallback').style.display='flex';"
@@ -438,6 +702,151 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card-featured" data-tilt>
+                    <div class="project-thumb">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             onerror="this.style.display='none'; document.getElementById('project8-fallback').style.display='flex';"
+                             alt="ECG Billing System - Electricity Billing App for Ghana">
+                        <div id="project8-fallback" class="image-fallback" style="display: none;">
+                            <i class="fas fa-bolt" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>ECG Billing System</p>
+                            <p style="font-size: 0.8rem;">Electricity Billing App</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Web Application</span>
+                        <h3>ECG Billing System</h3>
+                        <p>A scalable, role-based electricity billing system for Ghana. Refactored for production with component modularization, custom hooks, Zustand state management, error boundaries, and comprehensive backend integration guide.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-list">
+                                <span>React</span>
+                                <span>Zustand</span>
+                                <span>Vite</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ghboy1/ghboy1-ECG-Billing-APP-Ghana" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-featured" data-tilt>
+                    <div class="project-thumb">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             onerror="this.style.display='none'; document.getElementById('project9-fallback').style.display='flex';"
+                             alt="ALBE ADU - Portfolio Website">
+                        <div id="project9-fallback" class="image-fallback" style="display: none;">
+                            <i class="fas fa-user" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>ALBE ADU</p>
+                            <p style="font-size: 0.8rem;">Portfolio Website</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Web Application</span>
+                        <h3>ALBE ADU</h3>
+                        <p>A modern portfolio website showcasing professional work and projects.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-list">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ghboy1/ALBE-ADU" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
+                                <a href="https://ghboy1.github.io/ALBE-ADU/" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-featured" data-tilt>
+                    <div class="project-thumb">
+                        <img src="https://images.unsplash.com/photo-1618005182386-a1e3e91bc931?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             onerror="this.style.display='none'; document.getElementById('project10-fallback').style.display='flex';"
+                             alt="Juaben MCE EOA - Municipal Website">
+                        <div id="project10-fallback" class="image-fallback" style="display: none;">
+                            <i class="fas fa-building" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>Juaben MCE EOA</p>
+                            <p style="font-size: 0.8rem;">Municipal Website</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Web Application</span>
+                        <h3>Juaben MCE EOA</h3>
+                        <p>Official website for the Juaben Municipal Chief Executive's office, providing information on local governance and services.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-list">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ghboy1/juaben-mce-EOA" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
+                                <a href="https://ghboy1.github.io/juaben-mce-EOA/" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-featured" data-tilt>
+                    <div class="project-thumb">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             onerror="this.style.display='none'; document.getElementById('project11-fallback').style.display='flex';"
+                             alt="EVANS ADU - Portfolio Website">
+                        <div id="project11-fallback" class="image-fallback" style="display: none;">
+                            <i class="fas fa-user" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>EVANS ADU</p>
+                            <p style="font-size: 0.8rem;">Portfolio Website</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Web Application</span>
+                        <h3>EVANS ADU</h3>
+                        <p>A dynamic portfolio website highlighting creative and professional achievements.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-list">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ghboy1/EVANS-ADU" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
+                                <a href="https://ghboy1.github.io/EVANS-ADU/" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-featured" data-tilt>
+                    <div class="project-thumb">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             onerror="this.style.display='none'; document.getElementById('project12-fallback').style.display='flex';"
+                             alt="Ghana EduTech Platform - Educational Technology">
+                        <div id="project12-fallback" class="image-fallback" style="display: none;">
+                            <i class="fas fa-graduation-cap" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>Ghana EduTech</p>
+                            <p style="font-size: 0.8rem;">EdTech Platform</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Web Application</span>
+                        <h3>Ghana EduTech Platform</h3>
+                        <p>An innovative platform designed to enhance education in Ghana through technology, offering tools for learning and teaching.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-list">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ghboy1/GhanaEduTechplatform" aria-label="GitHub Repo"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -450,21 +859,21 @@
                 <h2 class="section-title">Featured Ventures</h2>
             </div>
             <div class="ventures-grid">
-                <div class="card">
+                <div class="card" data-tilt>
                     <div class="card-icon"><i class="fas fa-users"></i></div>
                     <h3>PRIME/HR</h3>
                     <p>Revolutionary human resources platform transforming recruitment, talent management, and workforce development across Ghana. Our AI-powered matching system connects employers with the best talent.</p>
                     <a href="#" class="card-link">Visit Website <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="card">
+                <div class="card" data-tilt>
                     <div class="card-icon"><i class="fas fa-city"></i></div>
                     <h3>Ghana Keys</h3>
                     <p>Real estate development company creating modern, affordable living spaces and commercial properties. We focus on sustainable construction practices and community-oriented developments.</p>
                     <a href="#" class="card-link">View Properties <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="card">
+                <div class="card" data-tilt>
                     <div class="card-icon"><i class="fas fa-tint"></i></div>
                     <h3>Nsupure Water</h3>
                     <p>Clean water initiative providing sustainable water solutions to communities across Ghana. Our innovative purification systems and delivery network ensure access to safe drinking water for all.</p>
@@ -510,5 +919,107 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const moonIcon = '<i class="fas fa-moon"></i>';
+        const sunIcon = '<i class="fas fa-sun"></i>';
+
+        themeToggle.innerHTML = moonIcon;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = sunIcon;
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeToggle.innerHTML = moonIcon;
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check local storage or prefers-color-scheme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.setAttribute('data-theme', savedTheme);
+            themeToggle.innerHTML = savedTheme === 'dark' ? sunIcon : moonIcon;
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = sunIcon;
+        }
+
+        // Section fade-in on scroll
+        const sections = document.querySelectorAll('.section');
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Initialize Vanilla Tilt for 3D interactions
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5
+        });
+
+        // WebGL Particle Background for Hero
+        const canvas = document.getElementById('hero-bg');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 5000;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for (let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 5;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const material = new THREE.PointsMaterial({
+            size: 0.005,
+            color: 0xffffff
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, material);
+        scene.add(particlesMesh);
+
+        camera.position.z = 1;
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            particlesMesh.rotation.y += 0.0005;
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 </html>
