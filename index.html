@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rauf Husein | Software Marketplace — Enterprise Solutions for Africa</title>
+    <meta name="description" content="World-class enterprise software built for Africa. 30+ systems across healthcare, finance, agriculture, education and more. Buy, license or customize.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- NOISE OVERLAY -->
+<div class="noise-overlay"></div>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <div class="brand-mark">RH</div>
+            <div class="brand-text">
+                <span class="brand-name">RAUF HUSEIN</span>
+                <span class="brand-tagline">Software Marketplace</span>
+            </div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="products.html" class="nav-link">Products</a></li>
+            <li><a href="categories.html" class="nav-link">Categories</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <div class="search-trigger" id="searchTrigger">
+                <i class="fas fa-search"></i>
+                <span>Search products...</span>
+                <kbd>⌘K</kbd>
+            </div>
+            <a href="contact.html" class="nav-cta">Get a Demo</a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-modal">
+        <div class="search-header">
+            <i class="fas fa-search"></i>
+            <input type="text" id="globalSearch" placeholder="Search 30+ enterprise systems..." autofocus>
+            <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="search-results" id="searchResults">
+            <div class="search-hint">Type to search across all products and categories</div>
+        </div>
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-inner">
+        <div class="hero-label">
+            <span class="label-dot"></span>
+            Ghana's Premier Enterprise Software Studio
+        </div>
+        <h1 class="hero-title">
+            <span class="title-row">Software</span>
+            <span class="title-row accent-row">
+                <em>that moves</em>
+                <div class="title-badge">30+ Systems</div>
+            </span>
+            <span class="title-row">Africa forward.</span>
+        </h1>
+        <p class="hero-desc">Enterprise-grade software systems across healthcare, finance, agriculture, education, government and beyond — built for the African context, ready to scale globally.</p>
+        <div class="hero-actions">
+            <a href="products.html" class="btn-primary">
+                <span>Browse All Products</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="contact.html" class="btn-ghost">
+                <i class="fas fa-play-circle"></i>
+                <span>Request Live Demo</span>
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="hstat">
+                <span class="hstat-num" data-count="30">0</span><span class="hstat-plus">+</span>
+                <span class="hstat-label">Systems Built</span>
+            </div>
+            <div class="hstat-sep"></div>
+            <div class="hstat">
+                <span class="hstat-num" data-count="15">0</span><span class="hstat-plus">+</span>
+                <span class="hstat-label">Industry Verticals</span>
+            </div>
+            <div class="hstat-sep"></div>
+            <div class="hstat">
+                <span class="hstat-num" data-count="5">0</span><span class="hstat-plus">+</span>
+                <span class="hstat-label">Cities Deployed</span>
+            </div>
+            <div class="hstat-sep"></div>
+            <div class="hstat">
+                <span class="hstat-num" data-count="100">0</span><span class="hstat-plus">%</span>
+                <span class="hstat-label">Custom-built</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- MARQUEE TICKER -->
+<div class="ticker-wrap">
+    <div class="ticker-track">
+        <span>Agricultural Intelligence Platform</span>
+        <span class="ticker-dot">◆</span>
+        <span>Hotel Management Systems</span>
+        <span class="ticker-dot">◆</span>
+        <span>Core Banking Systems</span>
+        <span class="ticker-dot">◆</span>
+        <span>MediCare Ghana</span>
+        <span class="ticker-dot">◆</span>
+        <span>Enterprise Resource Planning</span>
+        <span class="ticker-dot">◆</span>
+        <span>Electronic Health Records</span>
+        <span class="ticker-dot">◆</span>
+        <span>E-Government Platforms</span>
+        <span class="ticker-dot">◆</span>
+        <span>GhanaSchoolApp</span>
+        <span class="ticker-dot">◆</span>
+        <span>CRM Systems</span>
+        <span class="ticker-dot">◆</span>
+        <span>Farm Management Systems</span>
+        <span class="ticker-dot">◆</span>
+        <!-- duplicate for seamless loop -->
+        <span>Agricultural Intelligence Platform</span>
+        <span class="ticker-dot">◆</span>
+        <span>Hotel Management Systems</span>
+        <span class="ticker-dot">◆</span>
+        <span>Core Banking Systems</span>
+        <span class="ticker-dot">◆</span>
+        <span>MediCare Ghana</span>
+        <span class="ticker-dot">◆</span>
+        <span>Enterprise Resource Planning</span>
+        <span class="ticker-dot">◆</span>
+        <span>Electronic Health Records</span>
+        <span class="ticker-dot">◆</span>
+        <span>E-Government Platforms</span>
+        <span class="ticker-dot">◆</span>
+        <span>GhanaSchoolApp</span>
+        <span class="ticker-dot">◆</span>
+    </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" id="featured">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-label">Featured Systems</div>
+            <h2 class="section-title">Our Flagship Products</h2>
+            <a href="products.html" class="see-all-link">View All 30+ Products <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="featured-grid">
+            <!-- Card 1 - Agricultural Intelligence -->
+            <div class="product-card featured-card" data-category="agriculture">
+                <div class="card-badge new">NEW</div>
+                <div class="card-icon-wrap" style="--icon-color: #22c55e;">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">Agriculture • AI-Powered</div>
+                    <h3 class="card-title">Agricultural Intelligence Platform</h3>
+                    <p class="card-desc">AI-driven crop management, yield prediction, and precision farming tools tailored for African agriculture.</p>
+                    <div class="card-tags">
+                        <span>AI/ML</span><span>IoT</span><span>Analytics</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">Contact for Pricing</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=agricultural-intelligence" class="btn-card-primary">Get Demo</a>
+                        <a href="products.html#agri-intel" class="btn-card-ghost"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 - Hotel Management -->
+            <div class="product-card featured-card" data-category="hospitality">
+                <div class="card-badge hot">HOT</div>
+                <div class="card-icon-wrap" style="--icon-color: #f59e0b;">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">Hospitality • Enterprise</div>
+                    <h3 class="card-title">Hotel Management System (HMS)</h3>
+                    <p class="card-desc">Complete hotel operations platform: reservations, billing, housekeeping, analytics and guest management.</p>
+                    <div class="card-tags">
+                        <span>PMS</span><span>Booking Engine</span><span>Reports</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">Contact for Pricing</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=hms" class="btn-card-primary">Get Demo</a>
+                        <a href="products.html#hms" class="btn-card-ghost"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 - Core Banking -->
+            <div class="product-card featured-card large-card" data-category="finance">
+                <div class="card-icon-wrap" style="--icon-color: #6366f1;">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">Finance • Banking</div>
+                    <h3 class="card-title">Core Banking System</h3>
+                    <p class="card-desc">Full-featured banking platform supporting accounts, loans, deposits, transfers, and regulatory reporting for financial institutions across Ghana.</p>
+                    <div class="card-tags">
+                        <span>Accounts</span><span>Loans</span><span>Compliance</span><span>Reporting</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">Contact for Pricing</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=core-banking" class="btn-card-primary">Get Demo</a>
+                        <a href="products.html#core-banking" class="btn-card-ghost"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 - Medicare Ghana -->
+            <div class="product-card featured-card" data-category="healthcare">
+                <div class="card-icon-wrap" style="--icon-color: #ef4444;">
+                    <i class="fas fa-heart-pulse"></i>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">Healthcare • Ghana</div>
+                    <h3 class="card-title">MediCare Ghana</h3>
+                    <p class="card-desc">Comprehensive hospital and clinic management system integrating patient records, billing, and scheduling.</p>
+                    <div class="card-tags">
+                        <span>EHR</span><span>Billing</span><span>Pharmacy</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">Contact for Pricing</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=medicare" class="btn-card-primary">Get Demo</a>
+                        <a href="products.html#medicare" class="btn-card-ghost"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 - ERP -->
+            <div class="product-card featured-card" data-category="business">
+                <div class="card-icon-wrap" style="--icon-color: #8b5cf6;">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">Business • Enterprise</div>
+                    <h3 class="card-title">Enterprise Resource Planning (ERP)</h3>
+                    <p class="card-desc">Unified business management: finance, HR, inventory, procurement, and operations in one powerful system.</p>
+                    <div class="card-tags">
+                        <span>Finance</span><span>HR</span><span>Inventory</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">Contact for Pricing</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=erp" class="btn-card-primary">Get Demo</a>
+                        <a href="products.html#erp" class="btn-card-ghost"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 - Ghana School App -->
+            <div class="product-card featured-card" data-category="education">
+                <div class="card-badge popular">POPULAR</div>
+                <div class="card-icon-wrap" style="--icon-color: #06b6d4;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">Education • Schools</div>
+                    <h3 class="card-title">GhanaSchoolApp</h3>
+                    <p class="card-desc">Complete school management: student records, grades, attendance, fees, parent portal and staff management.</p>
+                    <div class="card-tags">
+                        <span>SMS</span><span>Portal</span><span>Mobile</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price">
+                        <span class="price-label">Starting from</span>
+                        <span class="price-amount">Contact for Pricing</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=ghana-school" class="btn-card-primary">Get Demo</a>
+                        <a href="products.html#school" class="btn-card-ghost"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES SECTION -->
+<section class="section categories-section" id="categories">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-label">Browse by Industry</div>
+            <h2 class="section-title">Solutions for Every Sector</h2>
+        </div>
+        <div class="categories-grid">
+            <a href="products.html?cat=healthcare" class="cat-card">
+                <div class="cat-icon" style="--c: #ef4444;"><i class="fas fa-stethoscope"></i></div>
+                <div class="cat-info">
+                    <h3>Healthcare</h3>
+                    <span>4 Systems</span>
+                </div>
+                <i class="fas fa-arrow-right cat-arrow"></i>
+            </a>
+            <a href="products.html?cat=finance" class="cat-card">
+                <div class="cat-icon" style="--c: #f59e0b;"><i class="fas fa-coins"></i></div>
+                <div class="cat-info">
+                    <h3>Finance & Banking</h3>
+                    <span>3 Systems</span>
+                </div>
+                <i class="fas fa-arrow-right cat-arrow"></i>
+            </a>
+            <a href="products.html?cat=agriculture" class="cat-card">
+                <div class="cat-icon" style="--c: #22c55e;"><i class="fas fa-tractor"></i></div>
+                <div class="cat-info">
+                    <h3>Agriculture</h3>
+                    <span>3 Systems</span>
+                </div>
+                <i class="fas fa-arrow-right cat-arrow"></i>
+            </a>
+            <a href="products.html?cat=education" class="cat-card">
+                <div class="cat-icon" style="--c: #06b6d4;"><i class="fas fa-book-open"></i></div>
+                <div class="cat-info">
+                    <h3>Education</h3>
+                    <span>3 Systems</span>
+                </div>
+                <i class="fas fa-arrow-right cat-arrow"></i>
+            </a>
+            <a href="products.html?cat=government" class="cat-card">
+                <div class="cat-icon" style="--c: #6366f1;"><i class="fas fa-landmark"></i></div>
+                <div class="cat-info">
+                    <h3>Government</h3>
+                    <span>3 Systems</span>
+                </div>
+                <i class="fas fa-arrow-right cat-arrow"></i>
+            </a>
+            <a href="products.html?cat=business" class="cat-card">
+                <div class="cat-icon" style="--c: #8b5cf6;"><i class="fas fa-briefcase"></i></div>
+                <div class="cat-info">
+                    <h3>Business Management</h3>
+                    <span>8 Systems</span>
+                </div>
+                <i class="fas fa-arrow-right cat-arrow"></i>
+            </a>
+            <a href="products.html?cat=hospitality" class="cat-card">
+                <div class="cat-icon" style="--c: #ec4899;"><i class="fas fa-concierge-bell"></i></div>
+                <div class="cat-info">
+                    <h3>Hospitality & Events</h3>
+                    <span>3 Systems</span>
+                </div>
+                <i class="fas fa-arrow-right cat-arrow"></i>
+            </a>
+            <a href="products.html?cat=hr" class="cat-card">
+                <div class="cat-icon" style="--c: #f97316;"><i class="fas fa-users"></i></div>
+                <div class="cat-info">
+                    <h3>HR & Workforce</h3>
+                    <span>3 Systems</span>
+                </div>
+                <i class="fas fa-arrow-right cat-arrow"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- WHY RAUF HUSEIN -->
+<section class="section why-section">
+    <div class="container">
+        <div class="why-grid">
+            <div class="why-left">
+                <div class="section-label">Why Choose Us</div>
+                <h2 class="section-title">Built for Africa.<br>Ready for the World.</h2>
+                <p class="why-desc">Every system is crafted with deep knowledge of African business challenges — from multi-currency support to offline-first capabilities and local regulatory compliance.</p>
+                <a href="contact.html" class="btn-primary">Start a Conversation <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="why-right">
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-code-branch"></i></div>
+                    <div>
+                        <h4>Custom-Built, Not Adapted</h4>
+                        <p>Every product is designed from scratch for specific African market needs — not repurposed Western software.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div>
+                        <h4>Enterprise Security</h4>
+                        <p>Bank-grade security, role-based access control, audit logs, and compliance with local data regulations.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-mobile-screen"></i></div>
+                    <div>
+                        <h4>Mobile-First & Offline-Ready</h4>
+                        <p>Designed for Ghana's connectivity realities — systems that work reliably on mobile, even with intermittent internet.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-headset"></i></div>
+                    <div>
+                        <h4>Dedicated Local Support</h4>
+                        <p>Full implementation, training, and ongoing support from teams based across Ghana's major cities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ALL PRODUCTS PREVIEW GRID -->
+<section class="section all-preview-section">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-label">Complete Portfolio</div>
+            <h2 class="section-title">30+ Enterprise Systems</h2>
+            <a href="products.html" class="see-all-link">View Full Catalog <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="mini-grid">
+            <div class="mini-card" data-category="agriculture"><i class="fas fa-seedling"></i> Agricultural Intelligence Platform</div>
+            <div class="mini-card" data-category="hospitality"><i class="fas fa-hotel"></i> Hotel Management Systems</div>
+            <div class="mini-card" data-category="hr"><i class="fas fa-file-invoice-dollar"></i> Ghana Payroll & HR System</div>
+            <div class="mini-card" data-category="government"><i class="fas fa-vote-yea"></i> Ghana Election Backend</div>
+            <div class="mini-card" data-category="community"><i class="fas fa-church"></i> Church Management System</div>
+            <div class="mini-card" data-category="healthcare"><i class="fas fa-heart-pulse"></i> MediCare Ghana</div>
+            <div class="mini-card" data-category="education"><i class="fas fa-school"></i> GhanaSchoolApp</div>
+            <div class="mini-card" data-category="construction"><i class="fas fa-drafting-compass"></i> Architecture & Engineering PM</div>
+            <div class="mini-card" data-category="agriculture"><i class="fas fa-store"></i> Agricultural Marketplace</div>
+            <div class="mini-card" data-category="hospitality"><i class="fas fa-calendar-check"></i> Appointment Scheduling</div>
+            <div class="mini-card" data-category="finance"><i class="fas fa-landmark"></i> Core Banking Systems</div>
+            <div class="mini-card" data-category="hr"><i class="fas fa-user-tie"></i> Applicant Tracking Systems</div>
+            <div class="mini-card" data-category="agriculture"><i class="fas fa-tractor"></i> Farm Management Systems</div>
+            <div class="mini-card" data-category="hospitality"><i class="fas fa-ticket"></i> Event Ticketing Systems</div>
+            <div class="mini-card" data-category="finance"><i class="fas fa-calculator"></i> Accounting Practice Management</div>
+            <div class="mini-card" data-category="finance"><i class="fas fa-chart-bar"></i> Accounting Software</div>
+            <div class="mini-card" data-category="media"><i class="fas fa-broadcast-tower"></i> Broadcasting Systems</div>
+            <div class="mini-card" data-category="construction"><i class="fas fa-building"></i> BIM Systems</div>
+            <div class="mini-card" data-category="business"><i class="fas fa-gavel"></i> Case Management Systems</div>
+            <div class="mini-card" data-category="government"><i class="fas fa-city"></i> Citizen Service Portals</div>
+            <div class="mini-card" data-category="healthcare"><i class="fas fa-flask"></i> Clinical Trial Management (CTMS)</div>
+            <div class="mini-card" data-category="business"><i class="fas fa-handshake"></i> Consulting Management Systems</div>
+            <div class="mini-card" data-category="business"><i class="fas fa-file-alt"></i> Content Management Systems</div>
+            <div class="mini-card" data-category="business"><i class="fas fa-users-cog"></i> Customer Relationship Management</div>
+            <div class="mini-card" data-category="business"><i class="fas fa-photo-film"></i> Digital Asset Management</div>
+            <div class="mini-card" data-category="business"><i class="fas fa-robot"></i> Document Automation Systems</div>
+            <div class="mini-card" data-category="business"><i class="fas fa-folder-open"></i> Document Management Systems</div>
+            <div class="mini-card" data-category="ecommerce"><i class="fas fa-shopping-cart"></i> E-commerce Platforms</div>
+            <div class="mini-card" data-category="education"><i class="fas fa-graduation-cap"></i> Education Department Systems</div>
+            <div class="mini-card" data-category="government"><i class="fas fa-landmark"></i> E-Government Platforms</div>
+            <div class="mini-card" data-category="healthcare"><i class="fas fa-notes-medical"></i> Electronic Health Records (EHR)</div>
+            <div class="mini-card" data-category="hr"><i class="fas fa-id-badge"></i> Employee Self-Service Portals</div>
+            <div class="mini-card" data-category="energy"><i class="fas fa-bolt"></i> Energy Management Systems</div>
+            <div class="mini-card" data-category="business"><i class="fas fa-cubes"></i> Enterprise Resource Planning</div>
+        </div>
+    </div>
+</section>
+
+<!-- FOUNDER SECTION -->
+<section class="section founder-section">
+    <div class="container">
+        <div class="founder-grid">
+            <div class="founder-visual">
+                <div class="founder-rings">
+                    <div class="f-ring r1"></div>
+                    <div class="f-ring r2"></div>
+                    <div class="f-ring r3"></div>
+                    <div class="f-avatar"><i class="fas fa-user-tie"></i></div>
+                </div>
+                <div class="founder-badge-float">
+                    <i class="fas fa-star"></i>
+                    <span>Founder & CEO</span>
+                </div>
+            </div>
+            <div class="founder-content">
+                <div class="section-label">The Visionary Behind It All</div>
+                <h2>Rauf Husein</h2>
+                <h3 class="founder-role">Entrepreneur · Builder · Innovator</h3>
+                <p>As the founder of PrimeHR and creator of 30+ enterprise software systems, Rauf Husein is on a mission to solve Africa's most critical business challenges through technology. From banking systems to agricultural intelligence, each product is born from deep market research and a relentless drive to create value.</p>
+                <div class="founder-highlights">
+                    <div class="f-highlight">
+                        <span class="f-num">5+</span>
+                        <span class="f-text">Cities across Ghana</span>
+                    </div>
+                    <div class="f-highlight">
+                        <span class="f-num">30+</span>
+                        <span class="f-text">Systems delivered</span>
+                    </div>
+                    <div class="f-highlight">
+                        <span class="f-num">PrimeHR</span>
+                        <span class="f-text">HR solutions leader</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn-primary">Work with Rauf <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="cta-banner-bg"></div>
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to transform your business?</h2>
+            <p>Get a customized demo of any system — built and deployed to your specific requirements.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn-cta-white">Request a Demo <i class="fas fa-arrow-right"></i></a>
+                <a href="products.html" class="btn-cta-outline">Browse Products</a>
+            </div>
+        </div>
+        <div class="cta-decoration">
+            <div class="cta-hex h1"></div>
+            <div class="cta-hex h2"></div>
+            <div class="cta-hex h3"></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="brand-mark">RH</div>
+                <p>Rauf Husein Software Marketplace — Enterprise solutions built for Africa's growth economy.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <h5>Products</h5>
+                <ul>
+                    <li><a href="products.html?cat=healthcare">Healthcare Systems</a></li>
+                    <li><a href="products.html?cat=finance">Finance & Banking</a></li>
+                    <li><a href="products.html?cat=agriculture">Agriculture</a></li>
+                    <li><a href="products.html?cat=education">Education</a></li>
+                    <li><a href="products.html?cat=government">Government</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="index.html#about">About Rauf</a></li>
+                    <li><a href="categories.html">All Categories</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contact.html">Request Demo</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h5>Contact</h5>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> husein@primehr.org</li>
+                    <li><i class="fas fa-phone"></i> +233 24 883 7001</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Accra · Kumasi · Tamale</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Techiman · Takoradi</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Rauf Husein. All rights reserved. | PrimeHR — Ghana's HR Excellence</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">License Agreement</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

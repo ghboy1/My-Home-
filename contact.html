@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Get a Demo | Rauf Husein Software Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<div class="noise-overlay"></div>
+
+<nav class="nav solid" id="mainNav">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <div class="brand-mark">RH</div>
+            <div class="brand-text">
+                <span class="brand-name">RAUF HUSEIN</span>
+                <span class="brand-tagline">Software Marketplace</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link">Products</a></li>
+            <li><a href="categories.html" class="nav-link">Categories</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</nav>
+
+<section class="contact-hero">
+    <div class="contact-hero-content">
+        <div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Contact</span></div>
+        <h1>Let's Build<br>Something Great</h1>
+        <p>Request a live demo, purchase a license, or commission a custom build. Our team responds within 24 hours.</p>
+    </div>
+</section>
+
+<main class="contact-main">
+    <section class="company-info">
+        <div class="container">
+            <div class="company-description">
+                <h2>PrimeHR</h2>
+                <p class="tagline">Ghana's Leading Human Resource & Enterprise Software Solutions Provider</p>
+                <div class="description-text">
+                    <p>PrimeHR is Ghana's leading human resource solutions provider, dedicated to empowering businesses and individuals through expert HR services and enterprise software. We specialize in recruitment, training, workforce management, and software systems across every major industry.</p>
+                    <p>Our mission is to support Ghana's vision of a 24-hour economy by optimizing workforce productivity and delivering world-class software solutions. With offices in five major cities and 30+ systems in production, we connect technology with the real needs of African businesses.</p>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Our Offices</h3>
+                    <ul>
+                        <li>Accra (HQ)</li>
+                        <li>Kumasi</li>
+                        <li>Tamale</li>
+                        <li>Techiman</li>
+                        <li>Takoradi</li>
+                    </ul>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:husein@primehr.org">husein@primehr.org</a></p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">We respond within 24 hours</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+233248837001">+233 24 883 7001</a></p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Mon–Fri, 8am–6pm GMT</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Ready to Start?</h3>
+                    <p>Request a live demo of any of our 30+ enterprise systems, tailored to your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="container">
+            <h2>Send Us a Message</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+233 ...">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company / Organization</label>
+                    <input type="text" id="company" name="company" placeholder="Your company name">
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                    <label for="subject">I'm interested in *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">— Select a product or service —</option>
+                        <optgroup label="🌾 Agriculture">
+                            <option>Agricultural Intelligence Platform</option>
+                            <option>Agricultural Marketplace</option>
+                            <option>Farm Management Systems</option>
+                        </optgroup>
+                        <optgroup label="🏥 Healthcare">
+                            <option>MediCare Ghana</option>
+                            <option>Electronic Health Records (EHR)</option>
+                            <option>Clinical Trial Management (CTMS)</option>
+                        </optgroup>
+                        <optgroup label="💰 Finance & Banking">
+                            <option>Core Banking System</option>
+                            <option>Accounting Practice Management</option>
+                            <option>Accounting Software</option>
+                            <option>Ghana Payroll & HR System</option>
+                        </optgroup>
+                        <optgroup label="🏫 Education">
+                            <option>GhanaSchoolApp</option>
+                            <option>Education School Management</option>
+                            <option>Education Department Systems</option>
+                        </optgroup>
+                        <optgroup label="🏛️ Government">
+                            <option>Ghana Election Backend</option>
+                            <option>Citizen Service Portals</option>
+                            <option>E-Government Platforms</option>
+                        </optgroup>
+                        <optgroup label="💼 Business Management">
+                            <option>Enterprise Resource Planning (ERP)</option>
+                            <option>Customer Relationship Management (CRM)</option>
+                            <option>Document Management Systems</option>
+                            <option>Content Management Systems</option>
+                            <option>Case Management Systems</option>
+                            <option>Consulting Management Systems</option>
+                        </optgroup>
+                        <optgroup label="👥 HR & Workforce">
+                            <option>Applicant Tracking Systems (ATS)</option>
+                            <option>Employee Self-Service Portals</option>
+                        </optgroup>
+                        <optgroup label="🏨 Hospitality & Events">
+                            <option>Hotel Management System (HMS)</option>
+                            <option>Event Ticketing Systems</option>
+                            <option>Appointment Scheduling</option>
+                        </optgroup>
+                        <optgroup label="🏗️ Construction">
+                            <option>Architecture Engineering PM</option>
+                            <option>Building Information Modeling (BIM)</option>
+                        </optgroup>
+                        <optgroup label="Other">
+                            <option>Broadcasting Systems</option>
+                            <option>Church Management System</option>
+                            <option>E-commerce Platforms</option>
+                            <option>Energy Management Systems</option>
+                            <option>Custom Software Development</option>
+                            <option>HR Consulting Services</option>
+                            <option>Business Partnership</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                    <label for="enquiry-type">Type of Enquiry</label>
+                    <select id="enquiry-type" name="enquiry-type">
+                        <option value="demo">Request a Live Demo</option>
+                        <option value="purchase">Purchase / License</option>
+                        <option value="custom">Custom Development</option>
+                        <option value="partnership">Business Partnership</option>
+                        <option value="other">General Enquiry</option>
+                    </select>
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your business needs, scale, timeline, and any specific requirements..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="brand-mark">RH</div>
+                <p>Rauf Husein Software Marketplace — Enterprise solutions built for Africa's growth economy.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <h5>Products</h5>
+                <ul>
+                    <li><a href="products.html?cat=healthcare">Healthcare</a></li>
+                    <li><a href="products.html?cat=finance">Finance</a></li>
+                    <li><a href="products.html?cat=agriculture">Agriculture</a></li>
+                    <li><a href="products.html?cat=education">Education</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h5>Navigate</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h5>Contact</h5>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> husein@primehr.org</li>
+                    <li><i class="fas fa-phone"></i> +233 24 883 7001</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Accra · Kumasi · Tamale</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Rauf Husein. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+<script src="script.js"></script>
+</body>
+</html>

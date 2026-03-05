@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | Rauf Husein Software Marketplace</title>
+    <meta name="description" content="Browse 30+ enterprise software systems across healthcare, finance, agriculture, education, government and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<div class="noise-overlay"></div>
+
+<!-- NAV -->
+<nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <div class="brand-mark">RH</div>
+            <div class="brand-text">
+                <span class="brand-name">RAUF HUSEIN</span>
+                <span class="brand-tagline">Software Marketplace</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link active">Products</a></li>
+            <li><a href="categories.html" class="nav-link">Categories</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="search-trigger" id="searchTrigger">
+                <i class="fas fa-search"></i>
+                <span>Search products...</span>
+            </div>
+            <a href="contact.html" class="nav-cta">Get a Demo</a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-modal">
+        <div class="search-header">
+            <i class="fas fa-search"></i>
+            <input type="text" id="globalSearch" placeholder="Search 30+ enterprise systems...">
+            <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="search-results" id="searchResults">
+            <div class="search-hint">Type to search across all products and categories</div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content">
+            <div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Products</span></div>
+            <h1>All Products</h1>
+            <p>46+ enterprise systems spanning every major industry sector. Each system is purpose-built, fully customizable, and ready for deployment.</p>
+        </div>
+        <div class="page-hero-stats">
+            <div class="ph-stat"><span>46+</span><label>Systems</label></div>
+            <div class="ph-stat"><span>15+</span><label>Sectors</label></div>
+            <div class="ph-stat"><span>100%</span><label>Custom</label></div>
+        </div>
+    </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" id="filterBar">
+    <div class="container">
+        <div class="filter-inner">
+            <div class="filter-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="productSearch" placeholder="Search products...">
+            </div>
+            <div class="filter-categories">
+                <button class="filter-btn active" data-filter="all">All <span class="filter-count">46</span></button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="finance">Finance</button>
+                <button class="filter-btn" data-filter="agriculture">Agriculture</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="government">Government</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="hr">HR & Workforce</button>
+                <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+            </div>
+            <div class="filter-view">
+                <button class="view-btn active" data-view="grid" title="Grid view"><i class="fas fa-grid-2"></i></button>
+                <button class="view-btn" data-view="list" title="List view"><i class="fas fa-list"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCTS GRID -->
+<main class="products-main">
+    <div class="container">
+        <div class="products-header">
+            <span class="products-count" id="productsCount">Showing 46 products</span>
+        </div>
+        <div class="products-grid" id="productsGrid">
+
+            <!-- HEALTHCARE -->
+            <div class="product-card" data-category="healthcare" id="medicare">
+                <div class="card-badge hot">FLAGSHIP</div>
+                <div class="card-icon-wrap" style="--icon-color: #ef4444;"><i class="fas fa-heart-pulse"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Healthcare · Hospital Management</div>
+                    <h3 class="card-title">MediCare Ghana</h3>
+                    <p class="card-desc">Complete hospital and clinic management: patient registration, OPD/IPD, billing, pharmacy, lab, theatre, and management dashboards.</p>
+                    <div class="card-tags"><span>Patient Records</span><span>Billing</span><span>Pharmacy</span><span>Lab</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=medicare" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=medicare&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="healthcare" id="ehr">
+                <div class="card-icon-wrap" style="--icon-color: #f87171;"><i class="fas fa-notes-medical"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Healthcare · Records</div>
+                    <h3 class="card-title">Electronic Health Records (EHR)</h3>
+                    <p class="card-desc">Comprehensive digital health records system with FHIR-compatible data structures, patient history, and multi-facility support.</p>
+                    <div class="card-tags"><span>FHIR</span><span>Multi-Facility</span><span>Analytics</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=ehr" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=ehr&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="healthcare" id="ctms">
+                <div class="card-icon-wrap" style="--icon-color: #fb923c;"><i class="fas fa-flask"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Healthcare · Research</div>
+                    <h3 class="card-title">Clinical Trial Management (CTMS)</h3>
+                    <p class="card-desc">End-to-end clinical trial tracking, participant management, protocol compliance, and regulatory reporting system.</p>
+                    <div class="card-tags"><span>Trial Tracking</span><span>Compliance</span><span>Reporting</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=ctms" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=ctms&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FINANCE -->
+            <div class="product-card" data-category="finance" id="core-banking">
+                <div class="card-badge new">ENTERPRISE</div>
+                <div class="card-icon-wrap" style="--icon-color: #f59e0b;"><i class="fas fa-landmark"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Finance · Banking</div>
+                    <h3 class="card-title">Core Banking System</h3>
+                    <p class="card-desc">Full-featured core banking: accounts, deposits, loans, transfers, GL, regulatory reporting, and multi-branch management for financial institutions.</p>
+                    <div class="card-tags"><span>Accounts</span><span>Loans</span><span>GL</span><span>Compliance</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=core-banking" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=core-banking&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="finance">
+                <div class="card-icon-wrap" style="--icon-color: #fbbf24;"><i class="fas fa-calculator"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Finance · Accounting</div>
+                    <h3 class="card-title">Accounting Practice Management</h3>
+                    <p class="card-desc">Complete practice management for accounting firms: client management, billing, workflow, time tracking, and financial reporting.</p>
+                    <div class="card-tags"><span>Client Mgmt</span><span>Billing</span><span>Workflow</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=accounting-practice" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=accounting-practice&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="finance">
+                <div class="card-icon-wrap" style="--icon-color: #d97706;"><i class="fas fa-chart-bar"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Finance · Accounting</div>
+                    <h3 class="card-title">Accounting Software</h3>
+                    <p class="card-desc">SME-focused accounting system with ledger management, invoicing, payroll integration, tax computation, and financial statements.</p>
+                    <div class="card-tags"><span>Ledger</span><span>Invoicing</span><span>Tax</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=accounting-software" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=accounting-software&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AGRICULTURE -->
+            <div class="product-card" data-category="agriculture" id="agri-intel">
+                <div class="card-badge new">NEWEST</div>
+                <div class="card-icon-wrap" style="--icon-color: #22c55e;"><i class="fas fa-seedling"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Agriculture · AI/ML</div>
+                    <h3 class="card-title">Agricultural Intelligence Platform</h3>
+                    <p class="card-desc">AI-powered precision farming: crop monitoring, yield prediction, weather integration, soil analysis, and smart irrigation management.</p>
+                    <div class="card-tags"><span>AI/ML</span><span>IoT</span><span>Weather</span><span>Analytics</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=agri-intelligence" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=agri-intelligence&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="agriculture">
+                <div class="card-icon-wrap" style="--icon-color: #4ade80;"><i class="fas fa-store"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Agriculture · Marketplace</div>
+                    <h3 class="card-title">Agricultural Marketplace</h3>
+                    <p class="card-desc">Digital marketplace connecting farmers, buyers, and agro-dealers. Listings, orders, payments, logistics, and price intelligence.</p>
+                    <div class="card-tags"><span>Marketplace</span><span>Payments</span><span>Logistics</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=agri-marketplace" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=agri-marketplace&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="agriculture">
+                <div class="card-icon-wrap" style="--icon-color: #86efac;"><i class="fas fa-tractor"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Agriculture · Operations</div>
+                    <h3 class="card-title">Farm Management Systems</h3>
+                    <p class="card-desc">Comprehensive farm operations management: crop planning, labor, equipment, inputs, harvesting records, and profitability analysis.</p>
+                    <div class="card-tags"><span>Crop Planning</span><span>Labor</span><span>Equipment</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=farm-management" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=farm-management&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDUCATION -->
+            <div class="product-card" data-category="education" id="school">
+                <div class="card-badge popular">POPULAR</div>
+                <div class="card-icon-wrap" style="--icon-color: #06b6d4;"><i class="fas fa-graduation-cap"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Education · School Management</div>
+                    <h3 class="card-title">GhanaSchoolApp</h3>
+                    <p class="card-desc">All-in-one school management: admissions, student records, grades, attendance, fees, timetable, parent portal, and staff management.</p>
+                    <div class="card-tags"><span>SMS</span><span>Parent Portal</span><span>Mobile</span><span>Fees</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=ghana-school" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=ghana-school&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="education">
+                <div class="card-icon-wrap" style="--icon-color: #22d3ee;"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Education · Management</div>
+                    <h3 class="card-title">Education (School Management)</h3>
+                    <p class="card-desc">Advanced school administration system with e-learning integration, performance tracking, and ministry reporting modules.</p>
+                    <div class="card-tags"><span>E-Learning</span><span>Performance</span><span>Reporting</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=school-management" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=school-management&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="education">
+                <div class="card-icon-wrap" style="--icon-color: #67e8f9;"><i class="fas fa-university"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Education · Department</div>
+                    <h3 class="card-title">Education Department Systems</h3>
+                    <p class="card-desc">District and regional education department management: school oversight, performance monitoring, budget allocation, and policy compliance.</p>
+                    <div class="card-tags"><span>District Mgmt</span><span>Oversight</span><span>Budget</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=education-dept" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=education-dept&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GOVERNMENT -->
+            <div class="product-card" data-category="government">
+                <div class="card-icon-wrap" style="--icon-color: #6366f1;"><i class="fas fa-vote-yea"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Government · Elections</div>
+                    <h3 class="card-title">Ghana Election Backend</h3>
+                    <p class="card-desc">Secure election management system: voter registration, polling station management, results collation, and real-time reporting with audit trails.</p>
+                    <div class="card-tags"><span>Secure</span><span>Real-time</span><span>Audit</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=election" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=election&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="government">
+                <div class="card-icon-wrap" style="--icon-color: #818cf8;"><i class="fas fa-city"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Government · Services</div>
+                    <h3 class="card-title">Citizen Service Portals</h3>
+                    <p class="card-desc">Digital government service delivery: permit applications, complaints, document requests, payment processing, and status tracking for citizens.</p>
+                    <div class="card-tags"><span>e-Government</span><span>Permits</span><span>Payments</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=citizen-portal" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=citizen-portal&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="government">
+                <div class="card-icon-wrap" style="--icon-color: #a5b4fc;"><i class="fas fa-landmark"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Government · Digital</div>
+                    <h3 class="card-title">E-Government Platforms</h3>
+                    <p class="card-desc">Comprehensive digital governance platform with inter-agency communication, resource management, public reporting, and citizen engagement tools.</p>
+                    <div class="card-tags"><span>Inter-Agency</span><span>Digital Gov</span><span>Reporting</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=egovernment" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=egovernment&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR -->
+            <div class="product-card" data-category="hr">
+                <div class="card-icon-wrap" style="--icon-color: #f97316;"><i class="fas fa-file-invoice-dollar"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">HR · Payroll</div>
+                    <h3 class="card-title">Ghana Payroll & HR System</h3>
+                    <p class="card-desc">Ghana-specific payroll: SSNIT, PAYE, tier 2/3 pension processing, with full HR module for contracts, leave, and performance management.</p>
+                    <div class="card-tags"><span>SSNIT</span><span>PAYE</span><span>Pension</span><span>Leave</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=payroll-hr" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=payroll-hr&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hr">
+                <div class="card-icon-wrap" style="--icon-color: #fb923c;"><i class="fas fa-user-tie"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">HR · Recruitment</div>
+                    <h3 class="card-title">Applicant Tracking Systems (ATS)</h3>
+                    <p class="card-desc">End-to-end recruitment management: job posting, application tracking, interview scheduling, scoring, onboarding, and analytics.</p>
+                    <div class="card-tags"><span>Job Posting</span><span>Screening</span><span>Onboarding</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=ats" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=ats&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hr">
+                <div class="card-icon-wrap" style="--icon-color: #fdba74;"><i class="fas fa-id-badge"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">HR · Self-Service</div>
+                    <h3 class="card-title">Employee Self-Service Portals</h3>
+                    <p class="card-desc">Empower employees with self-service: leave requests, payslips, benefits, training enrollment, performance reviews, and communication tools.</p>
+                    <div class="card-tags"><span>Leave</span><span>Payslips</span><span>Benefits</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=ess" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=ess&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOSPITALITY -->
+            <div class="product-card" data-category="hospitality" id="hms">
+                <div class="card-badge hot">HOT</div>
+                <div class="card-icon-wrap" style="--icon-color: #ec4899;"><i class="fas fa-hotel"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Hospitality · Full-Suite</div>
+                    <h3 class="card-title">Hotel Management System (HMS)</h3>
+                    <p class="card-desc">Complete hotel operations: front desk, reservations, housekeeping, POS, inventory, accounts, and analytics dashboard.</p>
+                    <div class="card-tags"><span>PMS</span><span>POS</span><span>Reservations</span><span>Housekeeping</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=hms" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=hms&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hospitality">
+                <div class="card-icon-wrap" style="--icon-color: #f472b6;"><i class="fas fa-ticket"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Events · Ticketing</div>
+                    <h3 class="card-title">Event Ticketing Systems</h3>
+                    <p class="card-desc">Full-cycle event management: ticket creation, sales, QR scanning, attendee management, reporting, and revenue analytics.</p>
+                    <div class="card-tags"><span>Ticketing</span><span>QR Scan</span><span>Sales</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=event-ticketing" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=event-ticketing&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hospitality">
+                <div class="card-icon-wrap" style="--icon-color: #f9a8d4;"><i class="fas fa-calendar-check"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Services · Scheduling</div>
+                    <h3 class="card-title">Appointment Scheduling</h3>
+                    <p class="card-desc">Smart appointment booking system with calendar management, reminders, recurring appointments, staff scheduling, and client records.</p>
+                    <div class="card-tags"><span>Booking</span><span>Reminders</span><span>Multi-Staff</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=appointment" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=appointment&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUSINESS -->
+            <div class="product-card" data-category="business" id="erp">
+                <div class="card-icon-wrap" style="--icon-color: #8b5cf6;"><i class="fas fa-cubes"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Enterprise</div>
+                    <h3 class="card-title">Enterprise Resource Planning (ERP)</h3>
+                    <p class="card-desc">Unified enterprise platform: finance, HR, procurement, inventory, production, sales, and reporting in one integrated system.</p>
+                    <div class="card-tags"><span>Finance</span><span>HR</span><span>Inventory</span><span>Procurement</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=erp" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=erp&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="business">
+                <div class="card-icon-wrap" style="--icon-color: #a78bfa;"><i class="fas fa-users-cog"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · CRM</div>
+                    <h3 class="card-title">Customer Relationship Management</h3>
+                    <p class="card-desc">Full CRM system: lead management, pipeline tracking, customer profiles, interaction history, sales forecasting, and automation workflows.</p>
+                    <div class="card-tags"><span>Pipeline</span><span>Leads</span><span>Automation</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=crm" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=crm&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="business">
+                <div class="card-icon-wrap" style="--icon-color: #c4b5fd;"><i class="fas fa-folder-open"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Documents</div>
+                    <h3 class="card-title">Document Management Systems (DMS)</h3>
+                    <p class="card-desc">Centralized document control: version management, approval workflows, secure storage, search, and access control for organizations.</p>
+                    <div class="card-tags"><span>Version Control</span><span>Workflows</span><span>Security</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=dms" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=dms&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="business">
+                <div class="card-icon-wrap" style="--icon-color: #7c3aed;"><i class="fas fa-robot"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Automation</div>
+                    <h3 class="card-title">Document Automation Systems</h3>
+                    <p class="card-desc">Automate document creation, processing, and distribution: templates, data extraction, e-signatures, and workflow automation.</p>
+                    <div class="card-tags"><span>Templates</span><span>e-Signature</span><span>Automation</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=doc-automation" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=doc-automation&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="business">
+                <div class="card-icon-wrap" style="--icon-color: #9333ea;"><i class="fas fa-file-alt"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Content</div>
+                    <h3 class="card-title">Content Management Systems (CMS)</h3>
+                    <p class="card-desc">Powerful CMS platform: content creation, publishing workflows, multi-site management, SEO tools, and analytics for organizations.</p>
+                    <div class="card-tags"><span>Publishing</span><span>SEO</span><span>Multi-site</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=cms" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=cms&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="business">
+                <div class="card-icon-wrap" style="--icon-color: #6d28d9;"><i class="fas fa-photo-film"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Assets</div>
+                    <h3 class="card-title">Digital Asset Management (DAM)</h3>
+                    <p class="card-desc">Centralized digital asset library: media storage, tagging, search, licensing management, and distribution for brands and media companies.</p>
+                    <div class="card-tags"><span>Media Library</span><span>Tagging</span><span>Distribution</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=dam" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=dam&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="business">
+                <div class="card-icon-wrap" style="--icon-color: #5b21b6;"><i class="fas fa-gavel"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Legal</div>
+                    <h3 class="card-title">Case Management Systems</h3>
+                    <p class="card-desc">Comprehensive case tracking for legal, HR, and compliance departments: case creation, assignment, status tracking, deadlines, and reporting.</p>
+                    <div class="card-tags"><span>Case Tracking</span><span>Deadlines</span><span>Compliance</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=case-mgmt" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=case-mgmt&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="business">
+                <div class="card-icon-wrap" style="--icon-color: #4c1d95;"><i class="fas fa-handshake"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Consulting</div>
+                    <h3 class="card-title">Consulting Management Systems</h3>
+                    <p class="card-desc">Project and client management for consulting firms: proposals, project tracking, time billing, knowledge base, and client reporting.</p>
+                    <div class="card-tags"><span>Projects</span><span>Time Billing</span><span>Reports</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=consulting" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=consulting&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONSTRUCTION -->
+            <div class="product-card" data-category="construction">
+                <div class="card-icon-wrap" style="--icon-color: #0ea5e9;"><i class="fas fa-drafting-compass"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Construction · Project Management</div>
+                    <h3 class="card-title">Architecture Engineering Project Management</h3>
+                    <p class="card-desc">AEC-specific project management: drawing management, RFI/submittals, scheduling, cost control, and site progress reporting.</p>
+                    <div class="card-tags"><span>AEC</span><span>Drawings</span><span>Cost Control</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=aec-pm" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=aec-pm&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="construction">
+                <div class="card-icon-wrap" style="--icon-color: #38bdf8;"><i class="fas fa-building"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Construction · BIM</div>
+                    <h3 class="card-title">Building Information Modeling (BIM)</h3>
+                    <p class="card-desc">BIM project collaboration platform: 3D model coordination, clash detection, quantity takeoffs, and lifecycle facility management.</p>
+                    <div class="card-tags"><span>3D Models</span><span>Coordination</span><span>Facility Mgmt</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=bim" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=bim&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OTHERS -->
+            <div class="product-card" data-category="community">
+                <div class="card-icon-wrap" style="--icon-color: #84cc16;"><i class="fas fa-church"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Community · Church</div>
+                    <h3 class="card-title">Church Management System</h3>
+                    <p class="card-desc">Comprehensive church administration: member management, attendance, giving/tithes, small groups, events, and communication tools.</p>
+                    <div class="card-tags"><span>Members</span><span>Giving</span><span>Events</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=church" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=church&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="media">
+                <div class="card-icon-wrap" style="--icon-color: #a3e635;"><i class="fas fa-broadcast-tower"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Media · Broadcasting</div>
+                    <h3 class="card-title">Broadcasting Systems</h3>
+                    <p class="card-desc">End-to-end broadcasting management: scheduling, traffic, advertising, content library, compliance logging, and audience analytics.</p>
+                    <div class="card-tags"><span>Scheduling</span><span>Traffic</span><span>Ad Management</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=broadcasting" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=broadcasting&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ecommerce">
+                <div class="card-icon-wrap" style="--icon-color: #34d399;"><i class="fas fa-shopping-cart"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Commerce · E-commerce</div>
+                    <h3 class="card-title">E-commerce Platforms</h3>
+                    <p class="card-desc">Full-featured online store: product catalog, cart, checkout, payment integration (Mobile Money + cards), inventory, and analytics.</p>
+                    <div class="card-tags"><span>Mobile Money</span><span>Inventory</span><span>Analytics</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=ecommerce" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=ecommerce&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="energy">
+                <div class="card-icon-wrap" style="--icon-color: #fbbf24;"><i class="fas fa-bolt"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Utilities · Energy</div>
+                    <h3 class="card-title">Energy Management Systems (EMS)</h3>
+                    <p class="card-desc">Monitor and optimize energy consumption: real-time metering, load analysis, cost allocation, alerts, and sustainability reporting.</p>
+                    <div class="card-tags"><span>Monitoring</span><span>Optimization</span><span>Sustainability</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=ems" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=ems&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== NEW TOCH PRODUCTS ===== -->
+
+            <!-- EDUCATION AI AGENT -->
+            <div class="product-card" data-category="education" id="edu-ai-agent">
+                <div class="card-badge hot">NEW · AI</div>
+                <div class="card-icon-wrap" style="--icon-color: #06b6d4;"><i class="fas fa-robot"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Education · AI-Powered</div>
+                    <h3 class="card-title">Education AI Agent</h3>
+                    <p class="card-desc">AI-driven educational assistant for personalized tutoring, adaptive learning paths, automated assessments, and real-time student performance analytics.</p>
+                    <div class="card-tags"><span>AI/ML</span><span>Adaptive Learning</span><span>Analytics</span><span>Tutoring</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=edu-ai" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=edu-ai&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAFECALL -->
+            <div class="product-card" data-category="government" id="safecall">
+                <div class="card-badge hot">NEW</div>
+                <div class="card-icon-wrap" style="--icon-color: #ef4444;"><i class="fas fa-phone-alt"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Safety · Emergency Communication</div>
+                    <h3 class="card-title">SafeCall</h3>
+                    <p class="card-desc">Secure emergency communication and incident reporting platform. Real-time alerts, escalation workflows, multi-channel notifications, and full audit trails for organizations and public agencies.</p>
+                    <div class="card-tags"><span>Emergency</span><span>Alerts</span><span>Reporting</span><span>Security</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=safecall" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=safecall&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MADE IN GHANA MARKETPLACE -->
+            <div class="product-card" data-category="ecommerce" id="made-in-ghana">
+                <div class="card-badge hot">NEW</div>
+                <div class="card-icon-wrap" style="--icon-color: #f59e0b;"><i class="fas fa-flag"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">E-Commerce · Made in Ghana</div>
+                    <h3 class="card-title">Made in Ghana Digital Marketplace</h3>
+                    <p class="card-desc">A dedicated digital marketplace celebrating and selling Ghanaian-made products. Vendor management, payment integration, logistics tracking, and local business promotion tools built for the Ghanaian market.</p>
+                    <div class="card-tags"><span>Marketplace</span><span>Vendors</span><span>Payments</span><span>Ghana</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=made-in-ghana" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=made-in-ghana&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BENAB SYSTEM -->
+            <div class="product-card" data-category="business" id="benab">
+                <div class="card-badge">NEW</div>
+                <div class="card-icon-wrap" style="--icon-color: #8b5cf6;"><i class="fas fa-layer-group"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Enterprise Platform</div>
+                    <h3 class="card-title">Benab Enterprise System</h3>
+                    <p class="card-desc">Multi-module enterprise platform covering operations management, reporting, workflow automation, and stakeholder portals. Designed for mid-to-large businesses seeking scalable digital transformation.</p>
+                    <div class="card-tags"><span>Multi-Module</span><span>Workflow</span><span>Automation</span><span>Scalable</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=benab" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=benab&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GHANA PAYROLL & HR (if not already present as a card — adding explicit card) -->
+            <!-- Already exists in the original, skipped -->
+
+            <!-- PHARMACY MANAGEMENT -->
+            <div class="product-card" data-category="healthcare" id="pharmacy">
+                <div class="card-icon-wrap" style="--icon-color: #10b981;"><i class="fas fa-pills"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Healthcare · Pharmacy</div>
+                    <h3 class="card-title">Pharmacy Management System</h3>
+                    <p class="card-desc">Full pharmacy operations: drug inventory, prescriptions, dispensing records, supplier management, expiry alerts, and regulatory compliance reporting.</p>
+                    <div class="card-tags"><span>Inventory</span><span>Prescriptions</span><span>Compliance</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=pharmacy" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=pharmacy&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESTAURANT MANAGEMENT -->
+            <div class="product-card" data-category="hospitality" id="restaurant">
+                <div class="card-icon-wrap" style="--icon-color: #f97316;"><i class="fas fa-utensils"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Hospitality · Food & Beverage</div>
+                    <h3 class="card-title">Restaurant Management System</h3>
+                    <p class="card-desc">End-to-end restaurant operations: table management, order processing, kitchen display, inventory, staff scheduling, billing, and customer loyalty programs.</p>
+                    <div class="card-tags"><span>POS</span><span>Orders</span><span>Kitchen</span><span>Inventory</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=restaurant" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=restaurant&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POINT OF SALE (POS) -->
+            <div class="product-card" data-category="business" id="pos">
+                <div class="card-icon-wrap" style="--icon-color: #ec4899;"><i class="fas fa-cash-register"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Retail · Point of Sale</div>
+                    <h3 class="card-title">Point of Sale (POS) System</h3>
+                    <p class="card-desc">Modern POS for retail and service businesses: fast checkout, inventory tracking, multi-payment methods (cash, card, mobile money), daily reports, and staff management.</p>
+                    <div class="card-tags"><span>Retail</span><span>Mobile Money</span><span>Inventory</span><span>Reports</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=pos" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=pos&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT MANAGEMENT -->
+            <div class="product-card" data-category="business" id="pms">
+                <div class="card-icon-wrap" style="--icon-color: #3b82f6;"><i class="fas fa-tasks"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Project Management</div>
+                    <h3 class="card-title">Project Management System</h3>
+                    <p class="card-desc">Collaborative project planning and execution: Gantt charts, task assignments, milestone tracking, resource allocation, time logging, and budget monitoring.</p>
+                    <div class="card-tags"><span>Gantt</span><span>Milestones</span><span>Resources</span><span>Budget</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=project-mgmt" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=project-mgmt&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROPERTY MANAGEMENT -->
+            <div class="product-card" data-category="business" id="property">
+                <div class="card-icon-wrap" style="--icon-color: #0ea5e9;"><i class="fas fa-building-user"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Real Estate · Property</div>
+                    <h3 class="card-title">Property Management System (PMS)</h3>
+                    <p class="card-desc">Full property lifecycle management: tenant onboarding, rent collection, maintenance requests, lease management, utility billing, and landlord reporting dashboards.</p>
+                    <div class="card-tags"><span>Tenants</span><span>Rent</span><span>Maintenance</span><span>Leases</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=property" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=property&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INVENTORY MANAGEMENT -->
+            <div class="product-card" data-category="business" id="inventory">
+                <div class="card-icon-wrap" style="--icon-color: #84cc16;"><i class="fas fa-boxes-stacking"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Business · Inventory</div>
+                    <h3 class="card-title">Inventory Management System</h3>
+                    <p class="card-desc">Real-time stock control across multiple warehouses: purchase orders, stock alerts, batch/serial tracking, supplier management, and full audit trails.</p>
+                    <div class="card-tags"><span>Stock Control</span><span>Multi-Warehouse</span><span>Suppliers</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=inventory" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=inventory&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLEET MANAGEMENT -->
+            <div class="product-card" data-category="business" id="fleet">
+                <div class="card-icon-wrap" style="--icon-color: #64748b;"><i class="fas fa-truck"></i></div>
+                <div class="card-body">
+                    <div class="card-meta">Logistics · Fleet</div>
+                    <h3 class="card-title">Fleet Management System</h3>
+                    <p class="card-desc">Track and manage vehicle fleets: GPS tracking, maintenance scheduling, driver management, fuel monitoring, trip logs, and compliance reporting.</p>
+                    <div class="card-tags"><span>GPS Tracking</span><span>Maintenance</span><span>Fuel</span><span>Compliance</span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price"><span class="price-label">Custom Pricing</span><span class="price-amount">Contact Us</span></div>
+                    <div class="card-actions">
+                        <a href="contact.html?product=fleet" class="btn-card-primary">Get Demo</a>
+                        <a href="contact.html?product=fleet&type=buy" class="btn-card-ghost">Buy / License</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NO RESULTS -->
+        <div class="no-results" id="noResults" style="display:none;">
+            <i class="fas fa-search"></i>
+            <h3>No products found</h3>
+            <p>Try adjusting your search or filter</p>
+            <button class="btn-primary" onclick="resetFilters()">Clear Filters</button>
+        </div>
+    </div>
+</main>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="cta-banner-bg"></div>
+    <div class="container">
+        <div class="cta-content">
+            <h2>Don't see exactly what you need?</h2>
+            <p>We build custom software from the ground up — tailored to your exact specifications and industry requirements.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn-cta-white">Talk to Rauf <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html?type=custom" class="btn-cta-outline">Request Custom Build</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="brand-mark">RH</div>
+                <p>Rauf Husein Software Marketplace — Enterprise solutions built for Africa's growth economy.</p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/rauf-husein" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/RaufSwestika" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
+                    <a href="https://web.facebook.com/rauf.husein1" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/rauf_husein/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <h5>By Category</h5>
+                <ul>
+                    <li><a href="#" data-filter-click="healthcare">Healthcare</a></li>
+                    <li><a href="#" data-filter-click="finance">Finance</a></li>
+                    <li><a href="#" data-filter-click="agriculture">Agriculture</a></li>
+                    <li><a href="#" data-filter-click="education">Education</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Request Demo</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h5>Contact</h5>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="91f9e4e2f4f8ffd1e1e3f8fcf4f9e3bffee3f6">[email&#160;protected]</a></li>
+                    <li><i class="fas fa-phone"></i> +233 24 883 7001</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Rauf Husein. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+<script>
+// Products page specific filtering
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.product-card');
+const searchInput = document.getElementById('productSearch');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterProducts(btn.dataset.filter, searchInput.value);
+    });
+});
+
+searchInput.addEventListener('input', () => {
+    const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+    filterProducts(activeFilter, searchInput.value);
+});
+
+function filterProducts(category, query = '') {
+    let visible = 0;
+    cards.forEach(card => {
+        const catMatch = category === 'all' || card.dataset.category === category;
+        const titleText = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+        const descText = card.querySelector('.card-desc')?.textContent.toLowerCase() || '';
+        const metaText = card.querySelector('.card-meta')?.textContent.toLowerCase() || '';
+        const queryMatch = !query || titleText.includes(query.toLowerCase()) || descText.includes(query.toLowerCase()) || metaText.includes(query.toLowerCase());
+        if (catMatch && queryMatch) {
+            card.style.display = '';
+            card.style.animation = 'fadeIn 0.3s ease forwards';
+            visible++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    document.getElementById('productsCount').textContent = `Showing ${visible} product${visible !== 1 ? 's' : ''}`;
+    document.getElementById('noResults').style.display = visible === 0 ? 'flex' : 'none';
+}
+
+function resetFilters() {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-filter="all"]').classList.add('active');
+    searchInput.value = '';
+    filterProducts('all');
+}
+
+// URL params
+const urlParams = new URLSearchParams(window.location.search);
+const catParam = urlParams.get('cat');
+if (catParam) {
+    const btn = document.querySelector(`[data-filter="${catParam}"]`);
+    if (btn) btn.click();
+}
+
+// Footer filter links
+document.querySelectorAll('[data-filter-click]').forEach(el => {
+    el.addEventListener('click', e => {
+        e
