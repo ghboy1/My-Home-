@@ -315,7 +315,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--border);padding:4
 /* sweeping gold light beam */
 .fx-aurora::after{content:'';position:absolute;top:-40%;left:-30%;width:60%;height:180%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);transform:rotate(18deg);animation:beamSweep 9s ease-in-out infinite}
 @keyframes beamSweep{0%,100%{transform:translateX(-30vw) rotate(18deg);opacity:0}50%{transform:translateX(90vw) rotate(18deg);opacity:1}}
-.fx-grid{position:fixed;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 70%)}
+.fx-grid{position:fixed;inset:0;z-index:1;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,0.10) 1px,transparent 1.4px);background-size:26px 26px;mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 0%,transparent 72%);-webkit-mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 0%,transparent 72%)}
 
 /* Scroll reveal */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1),transform 0.8s cubic-bezier(0.22,1,0.36,1)}
@@ -386,6 +386,93 @@ footer{position:relative;z-index:10;border-top:1px solid var(--border);padding:4
 .zone,.zone .z-name,.zone .z-tag,.zone .z-desc,.zone .z-arr{color:#fff}
 .zone .z-desc,.zone .z-tag{color:var(--text-dim)}
 a{color:inherit}
+
+/* ===== GEMINI-STYLE LAYER (android.com/gemini-intelligence) ===== */
+/* Deeper black canvas */
+body{background:#000}
+
+/* Soft top shimmer — elegant white glow arc at top center */
+.fx-aurora .a1{width:70vw;height:34vw;top:-20vw;left:15vw;background:radial-gradient(ellipse,rgba(255,255,255,0.32),transparent 68%);filter:blur(70px)}
+.fx-aurora .a2{width:46vw;height:24vw;top:-14vw;right:4vw;background:radial-gradient(ellipse,rgba(255,255,255,0.16),transparent 70%)}
+.fx-aurora .a3{width:44vw;height:22vw;top:-12vw;left:-6vw;bottom:auto;background:radial-gradient(ellipse,rgba(255,255,255,0.12),transparent 70%)}
+.fx-aurora span{opacity:.5}
+
+/* Statement typography — huge, tight, confident */
+.entry-title{font-size:clamp(3.2rem,9vw,7.5rem);letter-spacing:-0.045em;line-height:0.94;font-weight:700}
+.entry-title .line3{letter-spacing:0.22em;font-size:0.28em;color:rgba(255,255,255,0.22);-webkit-text-fill-color:rgba(255,255,255,0.22);white-space:nowrap}
+.entry-sub{font-size:1.22rem;color:rgba(255,255,255,0.62);max-width:640px;line-height:1.65;font-weight:400}
+.hub-title,.sec-title,.aig-title,.cta-title{letter-spacing:-0.035em;font-weight:700}
+.hub-title{font-size:clamp(2.6rem,5.5vw,4.6rem)}
+.aig-title{font-size:clamp(2.6rem,4.5vw,4rem)}
+.cta-title{font-size:clamp(2.4rem,4.5vw,4rem)}
+.hub-sub,.aig-desc,.cta-sub{color:rgba(255,255,255,0.60);font-size:1.08rem}
+.sec-label{color:rgba(255,255,255,0.45);font-size:0.68rem;letter-spacing:0.22em}
+
+/* Generous breathing room between sections */
+#hub,#marketplace,#aiforghana,#education,#about{padding-top:10rem;padding-bottom:10rem}
+#cta{padding-top:8rem;padding-bottom:8rem}
+.hub-header{margin-bottom:5rem}
+
+/* Smoother, rounder Google-style glass cards */
+:root{--radius:28px}
+.zone,.pc,.phase-card,.pillar-card,.t-card,.cmd-inner,.cta-inner,.about-card{
+  border-radius:28px!important;
+  background:rgba(255,255,255,0.05)!important;
+  border:1px solid rgba(255,255,255,0.12)!important;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.16)!important;
+}
+.zone{padding:2.6rem;min-height:280px}
+.pc,.pillar-card{padding:1.9rem}
+.phase-card{padding:1.6rem 1.8rem;border-radius:22px!important}
+.cta-inner{padding:6rem 3rem}
+.zone:hover,.pc:hover,.pillar-card:hover,.t-card:hover{
+  background:rgba(255,255,255,0.085)!important;
+  border-color:rgba(255,255,255,0.26)!important;
+  transform:translateY(-5px);
+  box-shadow:0 32px 80px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.26)!important;
+}
+/* softer shine so cards feel airy, not heavy */
+.zone::after,.pc::after,.phase-card::after,.pillar-card::after,.t-card::after,.cta-inner::after{
+  background:linear-gradient(160deg,rgba(255,255,255,0.10),rgba(255,255,255,0.02) 40%,transparent 62%);opacity:1;
+}
+
+/* Google-style pill buttons — clean white pill, deep black text, no clutter */
+.btn-enter,.nav-cta,.btn-green,.btn-red{
+  background:#fff!important;color:#000!important;border:none!important;
+  padding:0.95rem 2.3rem;border-radius:100px;font-weight:600;letter-spacing:-0.01em;
+  box-shadow:0 2px 14px rgba(255,255,255,0.18);
+}
+.nav-cta{padding:0.6rem 1.5rem}
+.btn-enter:hover,.nav-cta:hover,.btn-green:hover,.btn-red:hover{
+  background:#e8e8e8!important;transform:translateY(-1px) scale(1.02);
+  box-shadow:0 6px 28px rgba(255,255,255,0.28);
+}
+.btn-enter:hover::after{box-shadow:0 0 40px 6px rgba(255,255,255,0.22)}
+.btn-ghost,.btn-outline{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);
+  border-radius:100px;color:#fff;padding:0.95rem 2rem;
+}
+.btn-ghost:hover,.btn-outline:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.30);color:#fff}
+.pill{border-radius:100px;padding:0.5rem 1.2rem}
+.pill:hover,.pill.active{background:#fff;border-color:#fff;color:#000}
+
+/* Slim frosted nav — minimal chrome */
+.nav{padding:1rem 2rem}
+.nav.solid{background:rgba(0,0,0,0.55);backdrop-filter:blur(30px) saturate(150%);-webkit-backdrop-filter:blur(30px) saturate(150%);border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-links a{font-size:0.82rem;color:rgba(255,255,255,0.6)}
+.nav-links a:hover{color:#fff}
+.brand-mark{border-radius:12px}
+
+/* Cleaner entry tag pill */
+.entry-tag{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.75);backdrop-filter:blur(12px)}
+
+/* Ticker: quieter, airier */
+.fx-ticker{background:transparent;padding:1.1rem 0}
+.fx-ticker-track{color:rgba(255,255,255,0.42)}
+
+/* Footer refinement */
+footer{border-top:1px solid rgba(255,255,255,0.08);padding-top:5rem}
+.scroll-top{border-radius:100px}
 </style>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
   <link rel="stylesheet" href="/enhance.css">
@@ -510,7 +597,7 @@ a{color:inherit}
       <div class="z-desc">Free AI education for every Ghanaian via TikTok. The #PromptGhana movement starts here.</div>
       <span class="z-arr">Enter AI Lab <i class="fas fa-arrow-right"></i></span>
     </a>
-    <a href="ai-for-ghana.html" class="zone z-edu">
+    <a href="learning-center" class="zone z-edu">
       <div class="z-icon">📚</div>
       <div class="z-tag">Zone 03</div>
       <div class="z-name">Ghana Learning Hub</div>
@@ -631,7 +718,7 @@ a{color:inherit}
       <div class="pillar-card"><span class="pillar-num">Pillar 6 · Delivery</span><div class="pillar-icon">🏛️</div><div class="pillar-title">Implementation &amp; Governance</div><div class="pillar-desc">Phased 2025–2050 rollout, teacher training, financing, partnerships &amp; measurable KPIs.</div></div>
     </div>
     <div class="edu-link-row">
-      <a href="ai-for-ghana.html" class="btn-green"><i class="fas fa-graduation-cap"></i> Open AI For Ghana</a>
+      <a href="learning-center" class="btn-green"><i class="fas fa-graduation-cap"></i> Open Learning Center</a>
       <a href="quiz" class="btn-green"><i class="fas fa-circle-question"></i> Take a Quiz</a>
       <a href="teleprompter" class="btn-green"><i class="fas fa-book-open"></i> Lesson Teleprompter</a>
       <a href="slide-to-video" class="btn-green"><i class="fas fa-clapperboard"></i> Slide → Video</a>
@@ -718,7 +805,7 @@ a{color:inherit}
         <li><a href="products.html?cat=government">Government</a></li>
       </ul></div>
       <div class="fc"><h5>Projects</h5><ul>
-        <li><a href="ai-for-ghana.html">AI For Ghana</a></li>
+        <li><a href="learning-center">Learning Center</a></li>
         <li><a href="quiz">Quizzes &amp; Self-Test</a></li>
         <li><a href="tiktok-tool">AI For Ghana</a></li>
         <li><a href="teleprompter">Lesson Reader</a></li>
